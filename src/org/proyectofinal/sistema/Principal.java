@@ -19,7 +19,6 @@ public class Principal extends Application {
     private Stage escenarioPrincipal;
     private Scene escena; 
   
-    @Override
     public void start(Stage escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
         escenarioPrincipal.setTitle("RAM");
@@ -32,16 +31,13 @@ public class Principal extends Application {
     
     public void iniciar(){
         try{
-            EjemploController iniciar = (EjemploController)cambiarEscena("ejemploView.fxml", 600, 400);
+            EjemploController iniciar = (EjemploController) cambiarEscena("ejemploView.fxml", 600, 400);
             iniciar.setEscenarioPrincipal(this);
         }catch(Exception e){
             e.printStackTrace();
         }
-    
     }
-    
-    
-    
+       
     public Initializable cambiarEscena(String fxml, int ancho, int alto) throws Exception{
         Initializable resultado = null; 
         FXMLLoader cargadorFXML = new FXMLLoader();
@@ -52,8 +48,7 @@ public class Principal extends Application {
         escenarioPrincipal.setScene(escena);
         escenarioPrincipal.sizeToScene();
         resultado = (Initializable)cargadorFXML.getController();
-        return resultado; 
-            
+        return resultado;   
     }  
    
 

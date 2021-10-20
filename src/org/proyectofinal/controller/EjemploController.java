@@ -11,7 +11,6 @@ import org.proyectofinal.sistema.Principal;
 public class EjemploController implements Initializable{
 	private Principal escenarioPrincipal;
 	
-	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
