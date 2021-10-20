@@ -21,7 +21,7 @@ public class Principal extends Application {
   
     public void start(Stage escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
-        escenarioPrincipal.setTitle("RAM");
+        escenarioPrincipal.setTitle("EJEMPLO");
        // escenarioPrincipal.getIcons().add(new Image("/org/brandonsicay/images/ram.png"));
         iniciar();
         escenarioPrincipal.show();
