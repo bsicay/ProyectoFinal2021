@@ -4,6 +4,7 @@ import java.io.InputStream;
 
 
 import org.proyectofinal.controller.EjemploController;
+import org.proyectofinal.controller.LoginController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,25 +20,38 @@ public class Principal extends Application {
     private Stage escenarioPrincipal;
     private Scene escena; 
   
+    @Override
     public void start(Stage escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
-        escenarioPrincipal.setTitle("EJEMPLO");
+        escenarioPrincipal.setTitle("LOGIN");
        // escenarioPrincipal.getIcons().add(new Image("/org/brandonsicay/images/ram.png"));
-        iniciar();
+        login();
         escenarioPrincipal.show();
         
        
-    } 
+    }
     
     public void iniciar(){
         try{
-            EjemploController iniciar = (EjemploController) cambiarEscena("ejemploView.fxml", 600, 400);
+            EjemploController iniciar = (EjemploController)cambiarEscena("loginView.fxml", 800, 550);
             iniciar.setEscenarioPrincipal(this);
         }catch(Exception e){
             e.printStackTrace();
         }
+    
     }
-       
+    
+    public void login(){
+        try{
+            LoginController login = (LoginController)cambiarEscena("loginView.fxml", 800, 550);
+            login.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    
+    }
+    
+    
     public Initializable cambiarEscena(String fxml, int ancho, int alto) throws Exception{
         Initializable resultado = null; 
         FXMLLoader cargadorFXML = new FXMLLoader();
@@ -48,7 +62,8 @@ public class Principal extends Application {
         escenarioPrincipal.setScene(escena);
         escenarioPrincipal.sizeToScene();
         resultado = (Initializable)cargadorFXML.getController();
-        return resultado;   
+        return resultado; 
+            
     }  
    
 
