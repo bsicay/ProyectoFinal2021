@@ -27,7 +27,7 @@ public class Principal extends Application {
         escenarioPrincipal.show();
         
        
-    }
+    } 
     
     public void iniciar(){
         try{
