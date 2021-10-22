@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #1c2847;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="400.0" layoutY="67.0" prefHeight="64.0" prefWidth="296.0" text="AGREGAR CURSO:" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombreCurso" layoutX="457.0" layoutY="172.0" prefHeight="41.0" prefWidth="296.0" promptText="Nombre del Curso" />
+      <TextArea fx:id="txtDescripcionCurso" layoutX="400.0" layoutY="225.0" prefHeight="109.0" prefWidth="353.0" promptText="Descripción " />
+      <TextField fx:id="txtNivelDificultad" layoutX="457.0" layoutY="348.0" prefHeight="41.0" prefWidth="296.0" promptText="Nivel de dificultad" />
+      <TextField fx:id="txtDuracion" layoutX="457.0" layoutY="403.0" prefHeight="41.0" prefWidth="296.0" promptText="Duración" />
+      <CheckBox fx:id="chkCursoEspecial" layoutX="504.0" layoutY="466.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="296.0" text="Curso Especial" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </CheckBox>
+      <Ellipse fill="#c42143" layoutX="49.0" layoutY="67.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Ellipse fill="#c42143" layoutX="164.0" layoutY="14.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="400.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Users/Usuario/Downloads/pngwing.com%20(3).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="400.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Users/Usuario/Downloads/nivel-de-barras.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="400.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Users/Usuario/Downloads/reloj-icono-234872.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="400.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Users/Usuario/Downloads/pngwing.com%20(5).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="285.0" fitWidth="316.0" layoutX="70.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Users/Usuario/Downloads/curso-online.png" />
+         </image>
+      </ImageView>
+      <Line endX="167.0" layoutX="548.0" layoutY="131.0" startX="-271.0" stroke="RED" />
+   </children>
+</AnchorPane>
