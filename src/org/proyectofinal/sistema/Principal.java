@@ -24,7 +24,7 @@ public class Principal extends Application {
     public void start(Stage escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
         escenarioPrincipal.setTitle("LOGIN");
-       // escenarioPrincipal.getIcons().add(new Image("/org/brandonsicay/images/ram.png"));
+        escenarioPrincipal.getIcons().add(new Image("/org/proyectofinal/images/student.png"));
         login();
         escenarioPrincipal.show();
         
