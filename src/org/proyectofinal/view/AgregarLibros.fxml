@@ -26,27 +26,27 @@
       <TextField fx:id="txtAñoLibro" layoutX="104.0" layoutY="324.0" prefHeight="41.0" prefWidth="296.0" promptText="Año" />
       <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="46.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Users/Usuario/Downloads/pngwing.com.png" />
+            <Image url="@../images/pngwing.com.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="49.0" fitWidth="56.0" layoutX="46.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Users/Usuario/Pictures/Images/1995436.png" />
+            <Image url="@../images/1995436.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="41.0" fitWidth="49.0" layoutX="50.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Users/Usuario/Downloads/kisspng-book-cover-computer-icons-cover-vector-5ae025b233f277.2423393815246391542128.png" />
+            <Image url="@../images/kisspng-book-cover-computer-icons-cover-vector-5ae025b233f277.2423393815246391542128.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="41.0" fitWidth="49.0" layoutX="50.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Users/Usuario/Downloads/kisspng-portable-network-graphics-transparency-computer-ic-calendar-svg-vector-icon-free-icons-uihere-5d28f984f23b46.6892917615629664049922.png" />
+            <Image url="@../images/kisspng-portable-network-graphics-transparency-computer-ic-calendar-svg-vector-icon-free-icons-uihere-5d28f984f23b46.6892917615629664049922.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="50.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Users/Usuario/Downloads/pngwing.com%20(1).png" />
+            <Image url="@../images/pngwing.com%20(1).png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="245.0" layoutX="495.0" layoutY="140.0" stroke="#c42143" strokeType="INSIDE" width="242.0" />
@@ -54,9 +54,14 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="200.0" layoutX="437.0" layoutY="69.0" stroke="#c42143" strokeType="INSIDE" width="200.0" />
       <ImageView fitHeight="260.0" fitWidth="296.0" layoutX="437.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Users/Usuario/Downloads/pngwing.com%20(2).png" />
+            <Image url="@../images/pngwing.com%20(2).png" />
          </image>
       </ImageView>
       <Line endX="167.0" layoutX="586.0" layoutY="412.0" startX="-169.0" stroke="RED" />
+      <ImageView fitHeight="49.0" fitWidth="67.0" layoutX="26.0" layoutY="14.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/previous.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
