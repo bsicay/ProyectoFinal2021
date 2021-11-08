@@ -38,19 +38,19 @@
             <Image url="@../images/user.png" />
          </image>
       </ImageView>
-      <Button layoutX="381.0" layoutY="439.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="140.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="Iniciar Sesión" textFill="WHITE" />
-      <Button layoutX="537.0" layoutY="439.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="140.0" styleClass="button1" text="Registrarse" textFill="WHITE" />
+      <Button fx:id="btnLogin" layoutX="381.0" layoutY="439.0" mnemonicParsing="false" onAction="#inicioSesion" prefHeight="58.0" prefWidth="140.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="Iniciar Sesión" textFill="WHITE" />
+      <Button fx:id="btnRegister" layoutX="537.0" layoutY="439.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="140.0" styleClass="button1" text="Registrarse" textFill="WHITE" />
       <Pane layoutX="352.0" layoutY="367.0" prefHeight="46.0" prefWidth="333.0">
          <children>
-            <RadioButton layoutX="50.0" layoutY="3.0" mnemonicParsing="false" text="Estudiante" textFill="WHITE">
+            <RadioButton fx:id="rbEstudiante" layoutX="50.0" layoutY="3.0" mnemonicParsing="false" text="Estudiante" textFill="WHITE">
                <toggleGroup>
                   <ToggleGroup fx:id="rol" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="195.0" layoutY="3.0" mnemonicParsing="false" text="Docente" textFill="WHITE" toggleGroup="$rol" />
+            <RadioButton fx:id="rbDocente" layoutX="195.0" layoutY="3.0" mnemonicParsing="false" text="Docente" textFill="WHITE" toggleGroup="$rol" />
          </children>
       </Pane>
-      <PasswordField fx:id="txtPassword" layoutX="415.0" layoutY="299.0" prefHeight="46.0" prefWidth="300.0" promptText="Contraseña" />
+      <PasswordField fx:id="pswPassword" layoutX="415.0" layoutY="299.0" prefHeight="46.0" prefWidth="300.0" promptText="Contraseña" />
       <ImageView fitHeight="46.0" fitWidth="53.0" layoutX="362.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/password.png" />

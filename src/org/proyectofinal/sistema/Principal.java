@@ -14,6 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.proyectofinal.controller.AgregarCursosController;
+import org.proyectofinal.controller.AgregarLibrosController;
+import org.proyectofinal.controller.RegistrarController;
 
 public class Principal extends Application {
     private final String PAQUETE_VISTA = "/org/proyectofinal/view/";
@@ -49,6 +52,35 @@ public class Principal extends Application {
             e.printStackTrace();
         }
     
+    }
+    
+    public void agregarCursos(){
+        try{
+            AgregarCursosController agregarCursos = (AgregarCursosController)cambiarEscena("AgregarCurso.fxml", 800, 550);
+            agregarCursos.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    
+    }
+    public void agregarLibros(){
+        try{
+            AgregarLibrosController agregarLibros = (AgregarLibrosController)cambiarEscena("AgregarLibros.fxml", 800, 550);
+            agregarLibros.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    
+    }
+    
+    
+    public void registrar(){
+        try{
+            RegistrarController registrar = (RegistrarController)cambiarEscena("registroView.fxml", 800, 550);
+            registrar.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
     
