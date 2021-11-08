@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #1c2847;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="147.0" layoutY="403.0" stroke="#c42143" strokeType="INSIDE" width="255.0" />
+      <Label layoutX="163.0" layoutY="88.0" prefHeight="64.0" prefWidth="120.0" text="Profesor" textAlignment="CENTER" textFill="WHITE" underline="true">
+         <font>
+            <Font name="Arial" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="317.0" layoutY="24.0" prefHeight="64.0" prefWidth="166.0" text="Registrarse" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombreProfesor" layoutX="415.0" layoutY="123.0" prefHeight="41.0" prefWidth="296.0" promptText="Nombre " />
+      <TextField fx:id="txtUsuarioProfesor" layoutX="415.0" layoutY="222.0" prefHeight="41.0" prefWidth="296.0" promptText="Usuario" />
+      <TextField fx:id="intEdadProfesor" layoutX="415.0" layoutY="174.0" prefHeight="41.0" prefWidth="296.0" promptText="Edad" />
+      <TextField fx:id="txtContraseñaProfesor" layoutX="415.0" layoutY="276.0" prefHeight="41.0" prefWidth="296.0" promptText="Contraseña" />
+      <TextField fx:id="intTelefonoProfesor" layoutX="415.0" layoutY="326.0" prefHeight="41.0" prefWidth="296.0" promptText="Teléfono" />
+      <TextField fx:id="txtDireccionProfesor" layoutX="415.0" layoutY="374.0" prefHeight="41.0" prefWidth="296.0" promptText="Dirección" />
+      <RadioButton fx:id="rbMasculinoProfesor" layoutX="500.0" layoutY="483.0" mnemonicParsing="false" text="Masculino" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbFemeninoProfesor" layoutX="613.0" layoutY="483.0" mnemonicParsing="false" text="Femenino" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <CheckBox fx:id="chkEnseñanzaEspecializada" layoutX="415.0" layoutY="419.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="296.0" text="Enseñanza especializada" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="415.0" layoutY="473.0" prefHeight="41.0" prefWidth="45.0" text="Sexo" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Line endX="585.0" layoutX="191.0" layoutY="88.0" startX="-169.0" stroke="#c42143" />
+      <Polygon fill="#c42143" layoutX="84.0" layoutY="494.0" points="-84.0, -91.0, 210.0, -91.0, -84.0, -318.0" stroke="#c42143" strokeType="INSIDE" />
+      <ImageView fitHeight="285.0" fitWidth="316.0" layoutX="80.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Users/Usuario/Downloads/professor.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
