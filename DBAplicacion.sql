@@ -7,6 +7,8 @@ SET SQL_SAFE_UPDATES = 0;
 create table Estudiante(
 	idEstudiante int not null auto_increment,
     nombre varchar(100) not null, 
+    usuario varchar(50) not null,
+    contrasena varchar(50) not null,
     telefono varchar(20), 
     direccion varchar(100) not null, 
     edad int default 0, 
@@ -20,7 +22,11 @@ create table Estudiante(
 Create table Profesor(
 	idProfesor int not null auto_increment,
     nombre varchar(100) not null, 
+    usuario varchar(50) not null,
+    contrasena varchar(50) not null,
     telefono varchar(20), 
+    usuario varchar(50) not null,
+    password varchar(50) not null,
     direccion varchar(100) not null, 
     edad int default 0, 
 	sexo varchar(15),
@@ -92,4 +98,3 @@ call sp_ListarProfesor;
 select *from Estudiante;
 select *from Profesor;
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin';
