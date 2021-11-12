@@ -39,7 +39,7 @@
          </image>
       </ImageView>
       <Button fx:id="btnLogin" layoutX="381.0" layoutY="439.0" mnemonicParsing="false" onAction="#inicioSesion" prefHeight="58.0" prefWidth="140.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="Iniciar Sesión" textFill="WHITE" />
-      <Button fx:id="btnRegister" layoutX="537.0" layoutY="439.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="140.0" styleClass="button1" text="Registrarse" textFill="WHITE" />
+      <Button fx:id="btnRegister" layoutX="537.0" layoutY="439.0" mnemonicParsing="false" onAction="#registrar" prefHeight="58.0" prefWidth="140.0" styleClass="button1" text="Registrarse" textFill="WHITE" />
       <Pane layoutX="352.0" layoutY="367.0" prefHeight="46.0" prefWidth="333.0">
          <children>
             <RadioButton fx:id="rbEstudiante" layoutX="50.0" layoutY="3.0" mnemonicParsing="false" text="Estudiante" textFill="WHITE">

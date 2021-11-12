@@ -18,3 +18,8 @@
 .radio-button {
     -fx-padding: 10px;
 }
+
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #c42143, #9e4457);
+}

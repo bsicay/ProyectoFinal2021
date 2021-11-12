@@ -97,12 +97,13 @@ public class Principal extends Application {
     
     public void registrar(){
         try{
-            RegistrarController registrar = (RegistrarController)cambiarEscena("registroView.fxml", 800, 550);
+            RegistrarController registrar = (RegistrarController)cambiarEscena("principalRegistroView.fxml", 800, 550);
             registrar.setEscenarioPrincipal(this);
         }catch(Exception e){
             e.printStackTrace();
         }
     }
+
     
     
     public Initializable cambiarEscena(String fxml, int ancho, int alto) throws Exception{

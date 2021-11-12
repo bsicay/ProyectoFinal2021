@@ -25,8 +25,6 @@ Create table Profesor(
     usuario varchar(50) not null,
     contrasena varchar(50) not null,
     telefono varchar(20), 
-    usuario varchar(50) not null,
-    password varchar(50) not null,
     direccion varchar(100) not null, 
     edad int default 0, 
 	sexo varchar(15),
@@ -38,11 +36,13 @@ Create table Profesor(
 
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
 Delimiter $$
-Create procedure sp_AgregarEstudiante(nombre_estudiante varchar(100), telefono_estudiante varchar(20), direccion_estudiante varchar(100), 
-edad_estudiante int, sexo_estudiante varchar(15), discapacidad_visual_estudiante tinyint, codigoTipoUsuario_estudiante int)
+Create procedure sp_AgregarEstudiante(nombre_estudiante varchar(100), usuario_estudiante varchar(50), contrasena_estudiante varchar(50),
+telefono_estudiante varchar(20), direccion_estudiante varchar(100), edad_estudiante int, sexo_estudiante varchar(15), 
+discapacidad_visual_estudiante tinyint, codigoTipoUsuario_estudiante int)
 Begin 	
-    Insert into Estudiante(nombre, telefono, direccion, edad, sexo, cantidad_cursos, discapacidad_visual, codigoTipoUsuario)
-		values(nombre_estudiante, telefono_estudiante, direccion_estudiante, edad_estudiante, sexo_estudiante, 0, discapacidad_visual_estudiante, codigoTipoUsuario_estudiante);
+    Insert into Estudiante(nombre, usuario, contrasena, telefono, direccion, edad, sexo, cantidad_cursos, discapacidad_visual, codigoTipoUsuario)
+		values(nombre_estudiante, usuario_estudiante, contrasena_estudiante, telefono_estudiante, direccion_estudiante, edad_estudiante, 
+        sexo_estudiante, 0, discapacidad_visual_estudiante, codigoTipoUsuario_estudiante);
 End$$
 Delimiter ; 
 
@@ -52,6 +52,8 @@ Begin
 	Select 
 		Estudiante.idEstudiante, 
 		Estudiante.nombre,
+        Estudiante.usuario,
+        Estudiante.contrasena,
 		Estudiante.telefono,
 		Estudiante.direccion,
 		Estudiante.edad,
@@ -65,11 +67,12 @@ Delimiter ;
 
 -- -----------------PROCEDIMIENTO DE PROFESOR
 Delimiter $$
-Create procedure sp_AgregarProfesor(nombre_profesor varchar(100), telefono_profesor varchar(20), direccion_profesor varchar(100), 
-edad_profesor int, sexo_profesor varchar(15), ensenanza_especializada_profesor tinyint, codigoTipoUsuario_profesor int)
+Create procedure sp_AgregarProfesor(nombre_profesor varchar(100), usuario_profesor varchar(50), contrasena_profesor varchar(50),
+telefono_profesor varchar(20), direccion_profesor varchar(100), edad_profesor int, sexo_profesor varchar(15), 
+ensenanza_especializada_profesor tinyint, codigoTipoUsuario_profesor int)
 Begin 	
-    Insert into Profesor(nombre, telefono, direccion, edad, sexo, ensenanza_especializada, codigoTipoUsuario)
-		values(nombre_profesor, telefono_profesor, direccion_profesor, edad_profesor, sexo_profesor, ensenanza_especializada_profesor, codigoTipoUsuario_profesor);
+    Insert into Profesor(nombre, usuario, contrasena, telefono, direccion, edad, sexo, ensenanza_especializada, codigoTipoUsuario)
+		values(nombre_profesor, usuario_profesor, contrasena_profesor, telefono_profesor, direccion_profesor, edad_profesor, sexo_profesor, ensenanza_especializada_profesor, codigoTipoUsuario_profesor);
 End$$
 Delimiter ; 
 
@@ -90,8 +93,8 @@ Begin
 End$$
 Delimiter ;
 
-call sp_AgregarEstudiante("Brandon", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
-call sp_AgregarProfesor("Jose", "48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
+call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
+call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 
