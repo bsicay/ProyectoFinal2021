@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polyline?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -17,7 +18,7 @@
             <Font name="Arial Bold" size="34.0" />
          </font>
       </Text>
-      <Pane fx:id="BMate" layoutX="53.0" layoutY="145.0" prefHeight="103.0" prefWidth="286.0">
+      <Pane fx:id="BMate" layoutX="53.0" layoutY="128.0" prefHeight="103.0" prefWidth="286.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="56.0" layoutX="90.0" layoutY="24.0" stroke="#00000005" strokeType="INSIDE" width="161.0" />
             <Circle fill="#c42143" layoutX="58.0" layoutY="53.0" radius="56.0" stroke="#00000005" strokeType="INSIDE" />
@@ -34,7 +35,7 @@
             </Button>
          </children>
       </Pane>
-      <Pane fx:id="BMate2" layoutX="451.0" layoutY="145.0" prefHeight="103.0" prefWidth="286.0">
+      <Pane fx:id="BMate2" layoutX="451.0" layoutY="128.0" prefHeight="103.0" prefWidth="286.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="56.0" layoutX="90.0" layoutY="24.0" stroke="#00000005" strokeType="INSIDE" width="161.0" />
             <Circle fill="#c42143" layoutX="58.0" layoutY="53.0" radius="56.0" stroke="#00000005" strokeType="INSIDE" />
@@ -51,7 +52,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="BMate21" layoutX="53.0" layoutY="275.0" prefHeight="103.0" prefWidth="286.0">
+      <Pane fx:id="BMate21" layoutX="53.0" layoutY="257.0" prefHeight="103.0" prefWidth="286.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="56.0" layoutX="90.0" layoutY="24.0" stroke="#00000005" strokeType="INSIDE" width="161.0" />
             <Circle fill="#c42143" layoutX="58.0" layoutY="53.0" radius="56.0" stroke="#00000005" strokeType="INSIDE" />
@@ -68,7 +69,7 @@
             </Button>
          </children>
       </Pane>
-      <Pane fx:id="BMate211" layoutX="451.0" layoutY="275.0" prefHeight="103.0" prefWidth="286.0">
+      <Pane fx:id="BMate211" layoutX="451.0" layoutY="257.0" prefHeight="103.0" prefWidth="286.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="56.0" layoutX="90.0" layoutY="24.0" stroke="#00000005" strokeType="INSIDE" width="161.0" />
             <Circle fill="#c42143" layoutX="58.0" layoutY="53.0" radius="56.0" stroke="#00000005" strokeType="INSIDE" />
@@ -85,7 +86,7 @@
             </Button>
          </children>
       </Pane>
-      <Pane fx:id="BMate212" layoutX="53.0" layoutY="407.0" prefHeight="103.0" prefWidth="286.0">
+      <Pane fx:id="BMate212" layoutX="53.0" layoutY="392.0" prefHeight="103.0" prefWidth="286.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="56.0" layoutX="90.0" layoutY="24.0" stroke="#00000005" strokeType="INSIDE" width="161.0" />
             <Circle fill="#c42143" layoutX="58.0" layoutY="53.0" radius="56.0" stroke="#00000005" strokeType="INSIDE" />
@@ -102,7 +103,7 @@
             </Button>
          </children>
       </Pane>
-      <Pane fx:id="BMate213" layoutX="451.0" layoutY="407.0" prefHeight="103.0" prefWidth="286.0">
+      <Pane fx:id="BMate213" layoutX="451.0" layoutY="392.0" prefHeight="103.0" prefWidth="286.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="56.0" layoutX="90.0" layoutY="24.0" stroke="#00000005" strokeType="INSIDE" width="161.0" />
             <Circle fill="#c42143" layoutX="58.0" layoutY="53.0" radius="56.0" stroke="#00000005" strokeType="INSIDE" />
@@ -124,10 +125,16 @@
             <Image url="@Fotos%20interfaz/Fotos%20cortadas/biblioteca.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="127.0" fitWidth="112.0" layoutX="702.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="127.0" fitWidth="112.0" layoutX="692.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Fotos%20interfaz/Fotos%20cortadas/diploma.png" />
          </image>
       </ImageView>
+      <Pane layoutX="661.0" layoutY="488.0" prefHeight="48.0" prefWidth="112.0">
+         <children>
+            <Polyline fill="WHITE" layoutX="91.0" layoutY="14.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="-90.0" scaleX="0.57" scaleY="0.5" stroke="WHITE" strokeType="INSIDE" />
+            <Button fx:id="Bpasar" layoutX="4.0" layoutY="9.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: #ffff;" textFill="WHITE" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
