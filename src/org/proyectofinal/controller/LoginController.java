@@ -79,7 +79,7 @@ public class LoginController implements Initializable{
             for(int i=0; i < getEstudiantes().size(); i++){
              if(txtUser.getText().equals(getEstudiantes().get(i).getNombre())){
                 JOptionPane.showMessageDialog(null, "BIENVENIDO");
-                registrar();
+                menuProfesor();
                 break;
              }else if(i >= getEstudiantes().size() -1 ){
                 JOptionPane.showMessageDialog(null, "El usuario no existe o no tiene permitido ingresar");
@@ -90,6 +90,10 @@ public class LoginController implements Initializable{
     
     public void registrar(){
         escenarioPrincipal.registrar();
+    }
+    
+    public void menuProfesor(){
+        escenarioPrincipal.menuProfesor();
     }
 
 

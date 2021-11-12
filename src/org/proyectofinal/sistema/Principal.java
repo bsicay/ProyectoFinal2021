@@ -16,7 +16,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.proyectofinal.controller.AgregarCursosController;
 import org.proyectofinal.controller.AgregarLibrosController;
+import org.proyectofinal.controller.MenuProfesorController;
 import org.proyectofinal.controller.RegistrarController;
+import org.proyectofinal.controller.VideoController;
 
 public class Principal extends Application {
     private final String PAQUETE_VISTA = "/org/proyectofinal/view/";
@@ -63,6 +65,7 @@ public class Principal extends Application {
         }
     
     }
+    
     public void agregarLibros(){
         try{
             AgregarLibrosController agregarLibros = (AgregarLibrosController)cambiarEscena("AgregarLibros.fxml", 800, 550);
@@ -73,6 +76,24 @@ public class Principal extends Application {
     
     }
     
+    public void menuProfesor(){
+        try{
+            MenuProfesorController menuProfesor = (MenuProfesorController)cambiarEscena("principalProfesor.fxml", 800, 550);
+            menuProfesor.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    
+    }
+    
+    public void subirVideo(){
+        try{
+            VideoController video = (VideoController)cambiarEscena("subirVideosView.fxml", 800, 550);
+            video.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     
     public void registrar(){
         try{
