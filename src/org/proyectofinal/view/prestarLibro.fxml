@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Arc fill="#c42143" layoutX="119.0" layoutY="454.0" length="270.0" radiusX="154.0" radiusY="181.0" rotate="-72.9" startAngle="45.0" stroke="TRANSPARENT" strokeType="INSIDE" type="ROUND" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c42143" height="158.0" layoutX="70.0" layoutY="173.0" stroke="TRANSPARENT" strokeType="INSIDE" width="245.0" />
+      <Text fill="WHITE" layoutX="431.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prestar Libro:">
+         <font>
+            <Font name="Arial Bold" size="39.0" />
+         </font>
+      </Text>
+      <Line endX="158.22311401367188" layoutX="532.0" layoutY="98.0" startX="-100.0" stroke="#c42143" strokeMiterLimit="15.0" />
+      <ImageView fitHeight="277.0" fitWidth="283.0" layoutX="30.0" layoutY="185.0">
+         <image>
+            <Image url="@../../../../Downloads/libreria.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bBuscar" layoutX="529.0" layoutY="423.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" text="Buscar">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tNombre" layoutX="499.0" layoutY="163.0" prefHeight="44.0" prefWidth="187.0" promptText="Nombre" />
+      <TextField fx:id="tCategoria" layoutX="500.0" layoutY="253.0" prefHeight="44.0" prefWidth="187.0" promptText="Categoría" />
+      <TextField fx:id="tAutor" layoutX="499.0" layoutY="339.0" prefHeight="44.0" prefWidth="187.0" promptText="Autor" />
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="420.0" layoutY="153.0">
+         <image>
+            <Image url="@../../../../Downloads/album-de-musica.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="420.0" layoutY="243.0">
+         <image>
+            <Image url="@../../../../Downloads/papel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="73.0" fitWidth="71.0" layoutX="417.0" layoutY="324.0">
+         <image>
+            <Image url="@../../../../Downloads/escritor.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bRegresar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="116.0" style="-fx-background-color: #2F2B43;" text="&lt;" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="56.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
