@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="WHITE" layoutX="134.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asignarse a un curso">
+         <font>
+            <Font name="Arial Bold" size="37.0" />
+         </font>
+      </Text>
+      <Button fx:id="bRegresar" layoutX="-5.0" layoutY="14.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="120.0" style="-fx-background-color: #2F2B43;" text="&lt;" textFill="WHITE">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Button>
+      <Line endX="267.0" layoutX="235.0" layoutY="96.0" startX="-100.0" stroke="#c42143" />
+      <Pane layoutX="392.0" layoutY="158.0" prefHeight="401.0" prefWidth="437.0">
+         <children>
+            <Circle fill="#c42143" layoutX="220.0" layoutY="201.0" radius="182.0" stroke="#c42143" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="219.0" layoutY="201.0" radius="175.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="264.0" fitWidth="269.0" layoutX="85.0" layoutY="76.0">
+               <image>
+                  <Image url="@../../../../Downloads/curso-por-internet.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Polygon fill="#c42143" layoutX="91.0" layoutY="344.0" points="-124.0, 136.0, 235.0, 136.0, -38.0, -199.0" stroke="#c42143" strokeType="INSIDE" />
+      <Polygon fill="#c42143" layoutX="177.0" layoutY="344.0" points="-124.0, 136.0, 235.0, 136.0, -38.0, -199.0" rotate="180.0" stroke="#c42143" strokeType="INSIDE" />
+      <TextField fx:id="tNombre" layoutX="135.0" layoutY="179.0" prefHeight="41.0" prefWidth="187.0" promptText="Nombre" />
+      <TextField fx:id="tDificultad" layoutX="135.0" layoutY="266.0" prefHeight="41.0" prefWidth="187.0" promptText="Dificultad" />
+      <TextField fx:id="tDuracion" layoutX="135.0" layoutY="360.0" prefHeight="41.0" prefWidth="187.0" promptText="Duración" />
+      <RadioButton fx:id="bCursoEspecial" layoutX="135.0" layoutY="436.0" mnemonicParsing="false" text="Curso Especial" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <ImageView fitHeight="63.0" fitWidth="59.0" layoutX="55.0" layoutY="168.0">
+         <image>
+            <Image url="@../../../../Downloads/graduado%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="59.0" layoutX="55.0" layoutY="255.0">
+         <image>
+            <Image url="@../../../../Downloads/grafico-de-barras.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="68.0" layoutX="55.0" layoutY="346.0">
+         <image>
+            <Image url="@../../../../Downloads/reloj-de-pared.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bAsignarse" layoutX="217.0" layoutY="495.0" mnemonicParsing="false" text="Asignarse">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="bBuscar" layoutX="45.0" layoutY="495.0" mnemonicParsing="false" text="Buscar">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
