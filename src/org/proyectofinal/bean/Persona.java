@@ -12,21 +12,29 @@ package org.proyectofinal.bean;
 public class Persona {
     private int codigoUsuario;
     private String nombre;
+    private String usuario;
+    private String contrasena;
     private String telefono;
     private String direccion;
     private int edad;
+    private String sexo;
     private int cantidadCursos;
+    private int codigoTipoUsuario;
 
     public Persona() {
     }
 
-    public Persona(int codigoUsuario, String nombre, String telefono, String direccion, int edad, int cantidadCursos) {
+    public Persona(int codigoUsuario, String nombre, String usuario, String contrasena, String telefono, String direccion, int edad, String sexo, int cantidadCursos, int codigoTipoUsuario) {
         this.codigoUsuario = codigoUsuario;
         this.nombre = nombre;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
         this.telefono = telefono;
         this.direccion = direccion;
         this.edad = edad;
+        this.sexo = sexo;
         this.cantidadCursos = cantidadCursos;
+        this.codigoTipoUsuario = codigoTipoUsuario;
     }
 
     public int getCodigoUsuario() {
@@ -43,6 +51,22 @@ public class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getTelefono() {
@@ -69,6 +93,14 @@ public class Persona {
         this.edad = edad;
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
     public int getCantidadCursos() {
         return cantidadCursos;
     }
@@ -76,8 +108,14 @@ public class Persona {
     public void setCantidadCursos(int cantidadCursos) {
         this.cantidadCursos = cantidadCursos;
     }
-    
-    
+
+    public int getCodigoTipoUsuario() {
+        return codigoTipoUsuario;
+    }
+
+    public void setCodigoTipoUsuario(int codigoTipoUsuario) {
+        this.codigoTipoUsuario = codigoTipoUsuario;
+    }
     
     
     

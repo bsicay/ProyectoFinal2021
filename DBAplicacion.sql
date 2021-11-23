@@ -82,13 +82,15 @@ Begin
 	Select 
 		Profesor.idProfesor, 
 		Profesor.nombre,
+        Profesor.usuario,
+        Profesor.contrasena,
 		Profesor.telefono,
 		Profesor.direccion,
 		Profesor.edad,
 		Profesor.sexo,
         Profesor.ensenanza_especializada, 
         Profesor.cantidad_cursos, 
-        codigoTipoUsuario
+        Profesor.codigoTipoUsuario
         from Profesor; 
 End$$
 Delimiter ;

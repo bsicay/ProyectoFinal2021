@@ -41,6 +41,7 @@ public class LoginController implements Initializable{
     @FXML private Button btnRegister;
     @FXML private RadioButton rbEstudiante;
     @FXML private RadioButton rbDocente;
+    boolean encontradp = false;
     
     
     @Override
@@ -55,14 +56,17 @@ public class LoginController implements Initializable{
             PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_ListarEstudiante}");
             ResultSet resultado = procedimiento.executeQuery();
             while(resultado.next()){
-                lista.add(new Estudiante(resultado.getInt("idEstudiante"),
-                                resultado.getBoolean("discapacidad_visual"),
-                                resultado.getInt("codigoTipoUsuario"),
+                lista.add(new Estudiante(resultado.getBoolean("discapacidad_visual"),
+                                resultado.getInt("idEstudiante"),
                                 resultado.getString("nombre"), 
+                                resultado.getString("usuario"), 
+                                resultado.getString("contrasena"), 
                                 resultado.getString("telefono"),
                                 resultado.getString("direccion"), 
                                 resultado.getInt("edad"),
-                                resultado.getInt("cantidad_cursos")));
+                                resultado.getString("sexo"),
+                                resultado.getInt("cantidad_cursos"), 
+                                resultado.getInt("codigoTipoUsuario")));
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -70,22 +74,68 @@ public class LoginController implements Initializable{
         return listaEstudiante = FXCollections.observableList(lista);
     }  
     
+    public ObservableList<Profesor>getProfesor(){
+        ArrayList<Profesor> lista = new ArrayList<Profesor>();
+        try{
+            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_ListarProfesor}");
+            ResultSet resultado = procedimiento.executeQuery();
+            while(resultado.next()){
+                lista.add(new Profesor(resultado.getBoolean("ensenanza_especializada"),
+                                resultado.getInt("idProfesor"),
+                                resultado.getString("nombre"), 
+                                resultado.getString("usuario"), 
+                                resultado.getString("contrasena"), 
+                                resultado.getString("telefono"),
+                                resultado.getString("direccion"), 
+                                resultado.getInt("edad"),
+                                resultado.getString("sexo"),
+                                resultado.getInt("cantidad_cursos"), 
+                                resultado.getInt("codigoTipoUsuario")));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return listaProfesor = FXCollections.observableList(lista);
+    }
+    
     
     
     public void inicioSesion(){
-        if(txtUser.getText().isEmpty() || pswPassword.getText().isEmpty()){
+        if(txtUser.getText().isEmpty() || pswPassword.getText().isEmpty() || rbDocente.isFocused() || rbEstudiante.isFocused()){
             JOptionPane.showMessageDialog(null, "Ingrese todos los datos");  
         }else{
-            for(int i=0; i < getEstudiantes().size(); i++){
-             if(txtUser.getText().equals(getEstudiantes().get(i).getNombre())){
-                JOptionPane.showMessageDialog(null, "BIENVENIDO");
+            if (verificarEstudiante()) {
+               JOptionPane.showMessageDialog(null, "BIENVENIDO");
                 menuProfesor();
-                break;
-             }else if(i >= getEstudiantes().size() -1 ){
-                JOptionPane.showMessageDialog(null, "El usuario no existe o no tiene permitido ingresar");
-            }
-        }           
+            }else if(verificarProfesor()){
+                JOptionPane.showMessageDialog(null, "BIENVENIDO PROFESOR");
+                menuProfesor();
+            }else{
+               JOptionPane.showMessageDialog(null, "Credenciales incorrectaas"); 
+            }        
         }
+    }
+    
+    public boolean verificarEstudiante(){
+        encontradp = false;
+        for(int i=0; i < getEstudiantes().size(); i++){
+            if(txtUser.getText().equals(getEstudiantes().get(i).getUsuario()) && pswPassword.getText().equals(getEstudiantes().get(i).getContrasena())){
+                encontradp  = true;
+                break;
+            }
+        }
+        return encontradp;
+    }
+    
+    public boolean verificarProfesor(){
+        encontradp = false;
+        for(int i=0; i < getProfesor().size(); i++){
+                if(txtUser.getText().equals(getProfesor().get(i).getUsuario()) && pswPassword.getText().equals(getProfesor().get(i).getContrasena())){
+                    encontradp  = true;
+                    break;
+                }
+            }
+            return encontradp;
     }
     
     public void registrar(){

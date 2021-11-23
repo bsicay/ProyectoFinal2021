@@ -10,29 +10,18 @@ package org.proyectofinal.bean;
  * @author brand
  */
 public class Estudiante extends Persona{
-    private int codigoEstudiante; 
     private boolean discapacidadVisual;
 
     public Estudiante() {
     }
 
-    public Estudiante(int codigoEstudiante, boolean discapacidadVisual) {
-        this.codigoEstudiante = codigoEstudiante;
+    public Estudiante(boolean discapacidadVisual) {
         this.discapacidadVisual = discapacidadVisual;
     }
 
-    public Estudiante(int codigoEstudiante, boolean discapacidadVisual, int codigoUsuario, String nombre, String telefono, String direccion, int edad, int cantidadCursos) {
-        super(codigoUsuario, nombre, telefono, direccion, edad, cantidadCursos);
-        this.codigoEstudiante = codigoEstudiante;
+    public Estudiante(boolean discapacidadVisual, int codigoUsuario, String nombre, String usuario, String contrasena, String telefono, String direccion, int edad, String sexo, int cantidadCursos, int codigoTipoUsuario) {
+        super(codigoUsuario, nombre, usuario, contrasena, telefono, direccion, edad, sexo, cantidadCursos, codigoTipoUsuario);
         this.discapacidadVisual = discapacidadVisual;
-    }
-
-    public int getCodigoEstudiante() {
-        return codigoEstudiante;
-    }
-
-    public void setCodigoEstudiante(int codigoEstudiante) {
-        this.codigoEstudiante = codigoEstudiante;
     }
 
     public boolean isDiscapacidadVisual() {
@@ -42,9 +31,5 @@ public class Estudiante extends Persona{
     public void setDiscapacidadVisual(boolean discapacidadVisual) {
         this.discapacidadVisual = discapacidadVisual;
     }
-    
-    
-    
-    
     
 }
