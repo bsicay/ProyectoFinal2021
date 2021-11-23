@@ -33,7 +33,6 @@ public class RegistrarProfesorController implements Initializable{
     @FXML private CheckBox chkEnseñanzaEspecializada;
     @FXML private RadioButton rbMasculinoProfesor;
     @FXML private RadioButton rbFemeninoProfesor;
-    private ObservableList<Profesor>listaProfesor;
     
     
     @Override
