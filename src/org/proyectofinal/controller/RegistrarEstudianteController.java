@@ -16,6 +16,11 @@ import org.proyectofinal.sistema.Principal;
  */
 public class RegistrarEstudianteController implements Initializable{
     
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+       
+    }
+    
     private Principal escenarioPrincipal;
     
     public void registrar(){
@@ -30,10 +35,4 @@ public class RegistrarEstudianteController implements Initializable{
     public void setEscenarioPrincipal(Principal escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-       
-    }
-    
 }
