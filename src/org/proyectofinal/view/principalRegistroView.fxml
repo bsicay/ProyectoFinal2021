@@ -9,18 +9,18 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #1c2847;" stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.RegistrarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" styleClass="Anchor-Pane" stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.RegistrarController">
    <children>
       <Polygon fill="#c42143" layoutX="720.0" layoutY="496.0" points="-74.0, 66.0, 289.0, 66.0, 289.0, -221.0" stroke="#c42143" strokeType="INSIDE" />
       <Polygon fill="#c42143" layoutX="29.0" layoutY="500.0" points="-64.0, 76.0, 98.0, 76.0, -64.0, -328.0" stroke="#c42143" strokeType="INSIDE" />
-      <Label layoutX="266.0" layoutY="44.0" prefHeight="38.0" prefWidth="291.0" text="ESCOGA UN ROL" textFill="WHITE">
+      <Label fx:id="lblTitulo" layoutX="266.0" layoutY="44.0" prefHeight="38.0" prefWidth="291.0" text="ESCOGA UN ROL" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="33.0" />
          </font>
       </Label>
       <Pane layoutX="95.0" layoutY="140.0" prefHeight="297.0" prefWidth="270.0" style="-fx-background-radius: 20;" styleClass="linear-grad" stylesheets="@../resources/mainStyle.css">
          <children>
-            <Button layoutX="63.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="REGISTRAR" textFill="WHITE" />
+            <Button fx:id="btnProfesor" layoutX="63.0" layoutY="285.0" mnemonicParsing="false" onAction="#registrarProfesor" prefHeight="25.0" prefWidth="145.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="REGISTRAR" textFill="WHITE" />
             <Label layoutX="49.0" layoutY="195.0" text="PROFESOR" textFill="WHITE">
                <font>
                   <Font size="36.0" />
@@ -35,7 +35,7 @@
       </Pane>
       <Pane layoutX="448.0" layoutY="140.0" prefHeight="297.0" prefWidth="270.0" style="-fx-background-radius: 20;" styleClass="linear-grad" stylesheets="@../resources/mainStyle.css">
          <children>
-            <Button layoutX="63.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="REGISTRAR" textFill="WHITE" />
+            <Button fx:id="btnEstudiante" layoutX="63.0" layoutY="285.0" mnemonicParsing="false" onAction="#registrarEstudiante" prefHeight="25.0" prefWidth="145.0" styleClass="button1" stylesheets="@../resources/mainStyle.css" text="REGISTRAR" textFill="WHITE" />
             <Label layoutX="34.0" layoutY="195.0" text="ESTUDIANTE" textFill="WHITE">
                <font>
                   <Font size="36.0" />

@@ -18,6 +18,8 @@ import org.proyectofinal.controller.AgregarCursosController;
 import org.proyectofinal.controller.AgregarLibrosController;
 import org.proyectofinal.controller.MenuProfesorController;
 import org.proyectofinal.controller.RegistrarController;
+import org.proyectofinal.controller.RegistrarEstudianteController;
+import org.proyectofinal.controller.RegistrarProfesorController;
 import org.proyectofinal.controller.VideoController;
 
 public class Principal extends Application {
@@ -98,6 +100,24 @@ public class Principal extends Application {
     public void registrar(){
         try{
             RegistrarController registrar = (RegistrarController)cambiarEscena("principalRegistroView.fxml", 800, 550);
+            registrar.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void registrarProfesor(){
+        try{
+            RegistrarProfesorController registrar = (RegistrarProfesorController)cambiarEscena("registrarseProfesor.fxml", 800, 550);
+            registrar.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void registrarEstudiante(){
+        try{
+            RegistrarEstudianteController registrar = (RegistrarEstudianteController)cambiarEscena("registrarseEstudiante.fxml", 800, 550);
             registrar.setEscenarioPrincipal(this);
         }catch(Exception e){
             e.printStackTrace();

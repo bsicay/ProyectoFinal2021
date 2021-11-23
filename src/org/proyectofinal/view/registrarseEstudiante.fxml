@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #1c2847;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" styleClass="Anchor-Pane" stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.RegistrarEstudianteController">
    <children>
       <Polygon fill="#c42143" layoutX="64.0" layoutY="474.0" points="-64.0, 76.0, 98.0, 76.0, -64.0, -328.0" stroke="#c42143" strokeType="INSIDE" />
       <Polygon fill="#c42143" layoutX="74.0" layoutY="484.0" points="-74.0, 66.0, 289.0, 66.0, 289.0, -221.0" stroke="#c42143" strokeType="INSIDE" />
@@ -26,7 +26,7 @@
          </font>
       </Label>
       <TextField fx:id="txtNombreEstudiante" layoutX="439.0" layoutY="128.0" prefHeight="41.0" prefWidth="296.0" promptText="Nombre " />
-      <Label layoutX="317.0" layoutY="23.0" prefHeight="64.0" prefWidth="166.0" text="Registrarse" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lblTitulo" layoutX="317.0" layoutY="23.0" prefHeight="64.0" prefWidth="209.0" text="Registrarse" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial" size="31.0" />
          </font>
@@ -57,5 +57,10 @@
          </font>
       </Label>
       <Line endX="585.0" layoutX="201.0" layoutY="98.0" startX="-169.0" stroke="#c42143" />
+      <ImageView fitHeight="49.0" fitWidth="67.0" layoutX="32.0" layoutY="31.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/previous.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

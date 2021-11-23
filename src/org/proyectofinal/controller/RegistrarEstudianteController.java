@@ -6,7 +6,6 @@
 package org.proyectofinal.controller;
 
 import java.net.URL;
-import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import org.proyectofinal.sistema.Principal;
@@ -15,35 +14,26 @@ import org.proyectofinal.sistema.Principal;
  *
  * @author brand
  */
-public class RegistrarController implements Initializable{
+public class RegistrarEstudianteController implements Initializable{
     
     private Principal escenarioPrincipal;
-	
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-            // TODO Auto-generated method stub
-
-    }
-        
-    public void login(){
-        escenarioPrincipal.login();
+    
+    public void registrar(){
+        escenarioPrincipal.registrar();
     }
     
-    public void registrarProfesor(){
-        escenarioPrincipal.registrarProfesor();
-    }
-    
-    public void registrarEstudiante(){
-        escenarioPrincipal.registrarEstudiante();
-    }
-
     public Principal getEscenarioPrincipal() {
          return escenarioPrincipal;
     }
+
     
     public void setEscenarioPrincipal(Principal escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+       
+    }
     
 }
