@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" styleClass="Anchor-Pane" stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.MenuEstudianteController">
+   <children>
+      <Ellipse fill="#c42143" layoutX="37.0" layoutY="74.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Ellipse fill="#c42143" layoutX="141.0" layoutY="-47.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Label layoutX="85.0" layoutY="248.0" text="Crear Curso" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="382.0" layoutY="248.0" text="Libros" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="560.0" layoutY="248.0" text="Mis cursos" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="curso" fitHeight="150.0" fitWidth="200.0" layoutX="131.0" layoutY="74.0" onMouseEntered="#zoom" onMouseExited="#normal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/menuPrincipal/cursos.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="libros" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="74.0" onMouseEntered="#librosZoom" onMouseExited="#librosNormal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/menuPrincipal/libros.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="misCursos" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="74.0" onMouseEntered="#misCursosZoom" onMouseExited="#misCursosNormal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/menuPrincipal/misCursos.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="miPerfil" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="308.0" onMouseEntered="#perfilZoom" onMouseExited="#perfilNormal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/menuPrincipal/perfil.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="386.0" layoutY="477.0" text="Perfil" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="23.0" />
+         </font>
+      </Label>
+      <Ellipse fill="#c42143" layoutX="775.0" layoutY="477.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Ellipse fill="#c42143" layoutX="671.0" layoutY="550.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
