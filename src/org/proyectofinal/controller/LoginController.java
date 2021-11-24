@@ -106,7 +106,7 @@ public class LoginController implements Initializable{
         }else{
             if (verificarEstudiante()) {
                JOptionPane.showMessageDialog(null, "BIENVENIDO");
-                menuProfesor();
+                menuEstudiante();
             }else if(verificarProfesor()){
                 JOptionPane.showMessageDialog(null, "BIENVENIDO PROFESOR");
                 menuProfesor();
@@ -144,6 +144,10 @@ public class LoginController implements Initializable{
     
     public void menuProfesor(){
         escenarioPrincipal.menuProfesor();
+    }
+    
+    public void menuEstudiante(){
+        escenarioPrincipal.menuEstudiante();
     }
 
 

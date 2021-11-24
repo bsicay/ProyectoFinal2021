@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.proyectofinal.controller.AgregarCursosController;
 import org.proyectofinal.controller.AgregarLibrosController;
+import org.proyectofinal.controller.MenuEstudianteController;
 import org.proyectofinal.controller.MenuProfesorController;
 import org.proyectofinal.controller.RegistrarController;
 import org.proyectofinal.controller.RegistrarEstudianteController;
@@ -119,6 +120,15 @@ public class Principal extends Application {
         try{
             RegistrarEstudianteController registrar = (RegistrarEstudianteController)cambiarEscena("registrarseEstudiante.fxml", 800, 550);
             registrar.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void menuEstudiante(){
+        try{
+            MenuEstudianteController menu = (MenuEstudianteController)cambiarEscena("menuEstudiantesView.fxml", 800, 550);
+            menu.setEscenarioPrincipal(this);
         }catch(Exception e){
             e.printStackTrace();
         }

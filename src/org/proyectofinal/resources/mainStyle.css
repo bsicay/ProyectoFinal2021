@@ -11,7 +11,7 @@
 .Anchor-Pane{
     -fx-background-color: linear-gradient(#2F2B43,#1c2847);
     -fx-border-radius: 18 18 18 18;
-    -fx-font-family: 'M PLUS Rounded 1c', sans-serif;
+    
 }
 
 #lblTitulo{
