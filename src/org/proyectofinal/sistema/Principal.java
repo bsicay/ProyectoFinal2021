@@ -79,16 +79,6 @@ public class Principal extends Application {
     
     }
     
-    public void menuProfesor(){
-        try{
-            MenuProfesorController menuProfesor = (MenuProfesorController)cambiarEscena("principalProfesor.fxml", 800, 550);
-            menuProfesor.setEscenarioPrincipal(this);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    
-    }
-    
     public void subirVideo(){
         try{
             VideoController video = (VideoController)cambiarEscena("subirVideosView.fxml", 800, 550);
@@ -132,6 +122,16 @@ public class Principal extends Application {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    
+    public void menuProfesor(){
+        try{
+            MenuProfesorController menuProfesor = (MenuProfesorController)cambiarEscena("menuProfesoresView.fxml", 800, 550);
+            menuProfesor.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    
     }
 
     

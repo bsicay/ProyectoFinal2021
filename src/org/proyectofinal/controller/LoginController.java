@@ -101,7 +101,7 @@ public class LoginController implements Initializable{
     
     
     public void inicioSesion(){
-        if(txtUser.getText().isEmpty() || pswPassword.getText().isEmpty() || rbDocente.isFocused() || rbEstudiante.isFocused()){
+        if(txtUser.getText().isEmpty() || pswPassword.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingrese todos los datos");  
         }else{
             if (verificarEstudiante()) {
