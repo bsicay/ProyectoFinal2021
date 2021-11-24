@@ -11,12 +11,12 @@
    <children>
       <Ellipse fill="#c42143" layoutX="37.0" layoutY="74.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
       <Ellipse fill="#c42143" layoutX="141.0" layoutY="-47.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
-      <Label layoutX="85.0" layoutY="248.0" text="Crear Curso" textFill="WHITE">
+      <Label layoutX="135.0" layoutY="248.0" text="Crear Curso" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="382.0" layoutY="248.0" text="Libros" textFill="WHITE">
+      <Label layoutX="358.0" layoutY="248.0" text="Mis videos" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
