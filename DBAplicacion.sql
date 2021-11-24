@@ -34,6 +34,17 @@ Create table Profesor(
     Primary Key PK_idProfesor(idProfesor)
 );
 
+Create table videos(
+	idVideo int not null auto_increment,
+    idProfesor int not null,
+    url varchar(100) not null, 
+    usuario varchar(50) not null,
+    titulo varchar(50) not null,
+    descripcion varchar(20), 
+    Primary Key PK_idProfesor(idProfesor)
+);
+alter table videos add foreign key (idProfesor) references Profesor(idProfesor);
+
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
 Delimiter $$
 Create procedure sp_AgregarEstudiante(nombre_estudiante varchar(100), usuario_estudiante varchar(50), contrasena_estudiante varchar(50),
