@@ -131,7 +131,6 @@ public class Principal extends Application {
         }catch(Exception e){
             e.printStackTrace();
         }
-    
     }
 
     

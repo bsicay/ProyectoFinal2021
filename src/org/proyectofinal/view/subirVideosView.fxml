@@ -5,7 +5,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Ellipse?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #1c2847;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.VideoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" styleClass="Anchor-Pane" stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.VideoController">
    <children>
       <Ellipse fill="#c42143" layoutX="800.0" layoutY="484.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
       <Ellipse fill="#c42143" layoutX="-6.0" layoutY="469.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
