@@ -57,6 +57,17 @@ Create table curso(
 );
 alter table curso add foreign key (idProfesor) references Profesor(idProfesor);
 
+Create table Estudiante_Curso(
+	codigoEstudianteCurso int not null auto_increment, 
+    codigoEstudiante int not null, 
+    codigoCurso int not null, 
+    Primary Key PK_codigoEstudianteCurso(codigoEstudianteCurso),
+    CONSTRAINT FK_Estudiante_Curso_Estudiantes Foreign Key (codigoEstudiante) REFERENCES Estudiante(codigoEstudiante), 
+    CONSTRAINT FK_Estudiante_Curso_Curso Foreign Key (codigoCurso) REFERENCES curso(codigoCurso)
+    
+);
+
+
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
 Delimiter $$
 Create procedure sp_AgregarEstudiante(nombre_estudiante varchar(100), usuario_estudiante varchar(50), contrasena_estudiante varchar(50),
