@@ -41,9 +41,21 @@ Create table videos(
     usuario varchar(50) not null,
     titulo varchar(50) not null,
     descripcion varchar(20), 
-    Primary Key PK_idProfesor(idProfesor)
+    Primary Key PK_idVideo(idVideo)
 );
 alter table videos add foreign key (idProfesor) references Profesor(idProfesor);
+
+Create table curso(
+	idCurso int not null auto_increment,
+    idProfesor int not null,
+    descripcion varchar(100), 
+    usuario varchar(50) not null,
+    dificultad varchar(50) not null,
+    duracion int(20) not null, 
+    categoria varchar(100) not null,
+    Primary Key PK_idCurso(idCurso)
+);
+alter table curso add foreign key (idProfesor) references Profesor(idProfesor);
 
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
 Delimiter $$

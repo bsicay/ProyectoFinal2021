@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -20,8 +21,7 @@
       </Label>
       <TextField fx:id="txtNombreCurso" layoutX="457.0" layoutY="172.0" prefHeight="41.0" prefWidth="296.0" promptText="Nombre del Curso" />
       <TextArea fx:id="txtDescripcionCurso" layoutX="400.0" layoutY="225.0" prefHeight="109.0" prefWidth="353.0" promptText="Descripción " />
-      <TextField fx:id="txtNivelDificultad" layoutX="457.0" layoutY="348.0" prefHeight="41.0" prefWidth="296.0" promptText="Nivel de dificultad" />
-      <TextField fx:id="txtDuracion" layoutX="457.0" layoutY="403.0" prefHeight="41.0" prefWidth="296.0" promptText="Duración" />
+      <TextField fx:id="txtDuracion" layoutX="457.0" layoutY="403.0" prefHeight="41.0" prefWidth="296.0" promptText="Duración (horas)" />
       <CheckBox fx:id="chkCursoEspecial" layoutX="504.0" layoutY="466.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="296.0" text="Curso Especial" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="17.0" />
@@ -60,5 +60,6 @@
             <Image url="@../images/previous.png" />
          </image>
       </ImageView>
+      <ComboBox fx:id="cmbDificultad" layoutX="457.0" layoutY="353.0" prefHeight="31.0" prefWidth="296.0" />
    </children>
 </AnchorPane>
