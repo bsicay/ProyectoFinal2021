@@ -16,7 +16,6 @@ create table Estudiante(
     cantidad_cursos int default 0, 
     discapacidad_visual tinyint,
     codigoTipoUsuario int not null, 
-    idUsuarioActual int, 
     Primary Key PK_idEstudiante(idEstudiante)
 );
 
@@ -32,8 +31,13 @@ Create table Profesor(
     cantidad_cursos int default 0, 
     ensenanza_especializada tinyint,
     codigoTipoUsuario int not null, 
-    idUsuarioActual int,
     Primary Key PK_idProfesor(idProfesor)
+);
+
+Create table Usuario(
+	idUsuario int default 1,
+    idUsuarioActual int,
+    primary key PK_idUsuario(idUsuario)
 );
 
 
@@ -81,6 +85,15 @@ Create table Estudiante_Curso(
 );
 
 
+Delimiter $$
+Create procedure sp_EditarUsuario(IN idUsuario int)
+    Begin
+		Update Usuario set idUsuarioActual = idUsuario
+			Where idUsuario = 1; 
+	End$$
+Delimiter ; 
+
+
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
 Delimiter $$
 Create procedure sp_AgregarEstudiante(nombre_estudiante varchar(100), usuario_estudiante varchar(50), contrasena_estudiante varchar(50),
@@ -107,19 +120,10 @@ Begin
 		Estudiante.sexo,
         Estudiante.discapacidad_visual, 
         Estudiante.cantidad_cursos,
-        Estudiante.codigoTipoUsuario,
-        Estudiante.idUsuarioActual
+        Estudiante.codigoTipoUsuario
         from Estudiante; 
 End$$
 Delimiter;
-
-Delimiter $$
-Create procedure sp_EditarEstudiante(IN idUsuarioEstudiante int)
-    Begin
-		Update Estudiante set idUsuarioActual = idUsuarioEstudiante
-			Where idEstudiante = idUsuarioEstudiante; 
-	End$$
-Delimiter ; 
 
 -- -----------------PROCEDIMIENTO DE PROFESOR
 Delimiter $$
@@ -146,19 +150,10 @@ Begin
 		Profesor.sexo,
         Profesor.ensenanza_especializada, 
         Profesor.cantidad_cursos, 
-        Profesor.codigoTipoUsuario,
-        Profesor.idUsuarioActual
+        Profesor.codigoTipoUsuario
         from Profesor; 
 End$$
 Delimiter ;
-
-Delimiter $$
-Create procedure sp_EditarProfesor(IN idUsuarioProfesor int)
-    Begin
-		Update Profesor set idUsuarioActual = idUsuarioProfesor
-			Where idProfesor = idUsuarioProfesor; 
-	End$$
-Delimiter ; 
 
 -- -----------------PROCEDIMIENTO DE CURSOS
 Delimiter $$
@@ -189,5 +184,8 @@ call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 call sp_ListarCurso;
+
+insert into usuario(idUsuario, idUsuarioActual) values(1, 0);
+select *from usuario;
 
 

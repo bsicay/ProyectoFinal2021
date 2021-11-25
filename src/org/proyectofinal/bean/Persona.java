@@ -116,7 +116,7 @@ public class Persona {
     public void setCodigoTipoUsuario(int codigoTipoUsuario) {
         this.codigoTipoUsuario = codigoTipoUsuario;
     }
-    
+
     
     
 }

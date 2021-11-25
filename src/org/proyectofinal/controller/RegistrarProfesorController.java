@@ -78,7 +78,6 @@ public class RegistrarProfesorController implements Initializable{
             }
             
         }
-
     }
     
     private void limpiarControles(){

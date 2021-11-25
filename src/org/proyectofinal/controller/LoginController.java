@@ -99,28 +99,15 @@ public class LoginController implements Initializable{
         return listaProfesor = FXCollections.observableList(lista);
     }
     
-    public void actualizarEstudiante(int codigo){
+    public void actualizarUsuario(int codigo){
         try{
-            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_EditarEstudiante(?)}");
+            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_EditarUsuario(?)}");
             procedimiento.setInt(1, codigo);
             procedimiento.execute();
         }catch(Exception e){
             e.printStackTrace();
         }
-    }   
-    
-    public void actualizarProfesor(int codigo){
-        try{
-            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_EditarProfesor(?)}");
-            procedimiento.setInt(1, codigo);
-            procedimiento.execute();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    } 
-    
-    
-    
+    }
     
     public void inicioSesion(){
         if(txtUser.getText().isEmpty() || pswPassword.getText().isEmpty()){
@@ -142,7 +129,7 @@ public class LoginController implements Initializable{
         encontradp = false;
         for(int i=0; i < getEstudiantes().size(); i++){
             if(txtUser.getText().equals(getEstudiantes().get(i).getUsuario()) && pswPassword.getText().equals(getEstudiantes().get(i).getContrasena())){
-                actualizarEstudiante(getEstudiantes().get(i).getCodigoUsuario());
+                actualizarUsuario(getEstudiantes().get(i).getCodigoUsuario());
                 encontradp  = true;
                 break;
             }
@@ -154,7 +141,7 @@ public class LoginController implements Initializable{
         encontradp = false;
         for(int i=0; i < getProfesor().size(); i++){
                 if(txtUser.getText().equals(getProfesor().get(i).getUsuario()) && pswPassword.getText().equals(getProfesor().get(i).getContrasena())){
-                    actualizarProfesor(getProfesor().get(i).getCodigoUsuario());
+                    actualizarUsuario(getProfesor().get(i).getCodigoUsuario());
                     encontradp  = true;
                     break;
                 }

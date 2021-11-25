@@ -23,6 +23,8 @@ public class Estudiante extends Persona{
         super(codigoUsuario, nombre, usuario, contrasena, telefono, direccion, edad, sexo, cantidadCursos, codigoTipoUsuario);
         this.discapacidadVisual = discapacidadVisual;
     }
+    
+    
 
     public boolean isDiscapacidadVisual() {
         return discapacidadVisual;
