@@ -16,7 +16,7 @@ create table Estudiante(
     cantidad_cursos int default 0, 
     discapacidad_visual tinyint,
     codigoTipoUsuario int not null, 
-    idUsuarioActual int,
+    idUsuarioActual int, 
     Primary Key PK_idEstudiante(idEstudiante)
 );
 
@@ -35,6 +35,7 @@ Create table Profesor(
     idUsuarioActual int,
     Primary Key PK_idProfesor(idProfesor)
 );
+
 
 Create table videos(
 	idVideo int not null auto_increment,
@@ -106,10 +107,19 @@ Begin
 		Estudiante.sexo,
         Estudiante.discapacidad_visual, 
         Estudiante.cantidad_cursos,
-        Estudiante.codigoTipoUsuario
+        Estudiante.codigoTipoUsuario,
+        Estudiante.idUsuarioActual
         from Estudiante; 
 End$$
-Delimiter ;
+Delimiter;
+
+Delimiter $$
+Create procedure sp_EditarEstudiante(IN idUsuarioEstudiante int)
+    Begin
+		Update Estudiante set idUsuarioActual = idUsuarioEstudiante
+			Where idEstudiante = idUsuarioEstudiante; 
+	End$$
+Delimiter ; 
 
 -- -----------------PROCEDIMIENTO DE PROFESOR
 Delimiter $$
@@ -136,10 +146,19 @@ Begin
 		Profesor.sexo,
         Profesor.ensenanza_especializada, 
         Profesor.cantidad_cursos, 
-        Profesor.codigoTipoUsuario
+        Profesor.codigoTipoUsuario,
+        Profesor.idUsuarioActual
         from Profesor; 
 End$$
 Delimiter ;
+
+Delimiter $$
+Create procedure sp_EditarProfesor(IN idUsuarioProfesor int)
+    Begin
+		Update Profesor set idUsuarioActual = idUsuarioProfesor
+			Where idProfesor = idUsuarioProfesor; 
+	End$$
+Delimiter ; 
 
 -- -----------------PROCEDIMIENTO DE CURSOS
 Delimiter $$
