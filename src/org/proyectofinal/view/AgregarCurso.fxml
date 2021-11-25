@@ -56,7 +56,7 @@
          </image>
       </ImageView>
       <Line endX="167.0" layoutX="548.0" layoutY="131.0" startX="-271.0" stroke="RED" />
-      <ImageView fitHeight="64.0" fitWidth="63.0" layoutX="26.0" layoutY="23.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgVolver" fitHeight="64.0" fitWidth="63.0" layoutX="26.0" layoutY="23.0" onMouseClicked="#menuProfesor" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/previous.png" />
          </image>

@@ -109,8 +109,8 @@ public class AgregarCursosController implements Initializable{
         escenarioPrincipal.login();
     }
     
-    public void registrar(){
-      escenarioPrincipal.registrar();
+    public void menuProfesor(){
+      escenarioPrincipal.menuProfesor();
     }
 
 
