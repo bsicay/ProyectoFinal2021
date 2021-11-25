@@ -52,9 +52,9 @@ Create table curso(
     descripcion varchar(100), 
     dificultad varchar(50) not null,
     duracion int(20) not null, 
-    categoria varchar(100) not null,
     Primary Key PK_idCurso(idCurso)
 );
+
 alter table curso add foreign key (idProfesor) references Profesor(idProfesor);
 
 Create table actividades(
