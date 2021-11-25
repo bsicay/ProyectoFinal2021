@@ -17,17 +17,19 @@ public class Curso {
     private String descripcion;
     private String dificultad;
     private int duracion;
+    private boolean especial;
 
     public Curso() {
     }
 
-    public Curso(int codigoCurso, int codigoProfesor, String nombre, String descripcion, String dificultad, int duracion) {
+    public Curso(int codigoCurso, int codigoProfesor, String nombre, String descripcion, String dificultad, int duracion, boolean especial) {
         this.codigoCurso = codigoCurso;
         this.codigoProfesor = codigoProfesor;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.dificultad = dificultad;
         this.duracion = duracion;
+        this.especial = especial;
     }
 
     public int getCodigoCurso() {
@@ -74,8 +76,13 @@ public class Curso {
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
-    
-    
-     
+
+    public boolean isEspecial() {
+        return especial;
+    }
+
+    public void setEspecial(boolean especial) {
+        this.especial = especial;
+    }
     
 }

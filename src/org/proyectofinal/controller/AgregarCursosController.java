@@ -52,52 +52,52 @@ public class AgregarCursosController implements Initializable{
             "Intermedio",
             "Avanzado");
     }
-//    
-//    public void guardar(){
-//        if (txtNombreCurso.getText().isEmpty() || txtDescripcionCurso.getText().isEmpty() || txtDuracion.getText().isEmpty() 
-//                || cmbDificultad.getSelectionModel().isEmpty()){
-//            JOptionPane.showMessageDialog(null, "Ingrese todos los datos");  
-//        }else {
-//            LoginController profesor = new LoginController();
-//            Curso registro = new Curso();
-//            registro.setCodigoProfesor(profesor.getProfesor().get(0).getIdUsuarioActual());
-//            registro.setUsuario(txtUsuarioProfesor.getText());
-//            registro.setContrasena(txtContraseñaProfesor.getText());
-//            registro.setTelefono(intTelefonoProfesor.getText());
-//            registro.setDireccion(txtDireccionProfesor.getText());
-//            registro.setEdad(Integer.parseInt(intEdadProfesor.getText()));
-//            registro.setEnsenanzaEspecialidada(chkEnseñanzaEspecializada.isSelected());
-//            if (rbMasculinoProfesor.isSelected()) {
-//                registro.setSexo("M");
-//            }else {
-//                registro.setSexo("F");  
-//            }
-//            try{
-//                PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_AgregarProfesor(?,?,?,?,?,?,?,?,?)}");
-//                procedimiento.setString(1, registro.getNombre());
-//                procedimiento.setString(2, registro.getUsuario());
-//                procedimiento.setString(3, registro.getContrasena());
-//                procedimiento.setString(4, registro.getTelefono());
-//                procedimiento.setString(5, registro.getDireccion());
-//                procedimiento.setInt(6, registro.getEdad());
-//                procedimiento.setString(7, registro.getSexo());
-//                procedimiento.setBoolean(8, registro.isEnsenanzaEspecialidada());
-//                procedimiento.setInt(9, 1);
-//                procedimiento.execute();
-//                JOptionPane.showMessageDialog(null, "USUARIO GUARDADO CON EXITO");
-//                escenarioPrincipal.menuProfesor();
-//            }catch(Exception e){
-//                e.printStackTrace();
-//            }
-//            
-//        }
-//    }
-//    
+    
+    public void guardar(){
+        if (txtNombreCurso.getText().isEmpty() || txtDescripcionCurso.getText().isEmpty() || txtDuracion.getText().isEmpty() 
+                || cmbDificultad.getSelectionModel().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingrese todos los datos");  
+        }else {
+            LoginController profesor = new LoginController();
+            Curso registro = new Curso();
+            registro.setCodigoProfesor(profesor.getUsuario());
+            registro.setNombre(txtNombreCurso.getText());
+            registro.setDescripcion(txtDescripcionCurso.getText());
+            registro.setDificultad(cmbDificultad.getSelectionModel().getSelectedItem().toString());
+            registro.setDuracion(Integer.parseInt(txtDuracion.getText()));
+            registro.setEspecial(chkCursoEspecial.isSelected());
+            try{
+                PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_AgregarCurso(?,?,?,?,?,?)}");
+                procedimiento.setInt(1, registro.getCodigoProfesor());
+                procedimiento.setString(2, registro.getNombre());
+                procedimiento.setString(3, registro.getDescripcion());
+                procedimiento.setString(4, registro.getDificultad());
+                procedimiento.setInt(5, registro.getDuracion());
+                procedimiento.setBoolean(6, registro.isEspecial());
+                procedimiento.execute();
+                JOptionPane.showMessageDialog(null, "CURSO GUARDADO CON EXITO");
+                limpiarControles();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Ingrese datos validos");
+                e.printStackTrace();
+            }
+            
+        }
+    }
+    
+    public void limpiarControles(){
+        txtNombreCurso.setText("");
+        txtDescripcionCurso.setText("");
+        cmbDificultad.setSelectionModel(null);
+        txtDuracion.setText("");
+        chkCursoEspecial.setSelected(false);
+    }
+    
     public void SoloNumerosEnteros(KeyEvent keyEvent) {
         try{
             char key = keyEvent.getCharacter().charAt(0);
 
-            if (!Character.isDigit(key))
+            if (Character.isLetter(key))
                 keyEvent.consume();
 
         } catch (Exception e){ 

@@ -62,6 +62,6 @@
          </image>
       </ImageView>
       <ComboBox fx:id="cmbDificultad" layoutX="457.0" layoutY="353.0" prefHeight="31.0" prefWidth="296.0" />
-      <Button fx:id="btnAgregar" layoutX="143.0" layoutY="476.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="105.0" styleClass="button1" text="Agregar" textFill="WHITE" />
+      <Button fx:id="btnAgregar" layoutX="143.0" layoutY="476.0" mnemonicParsing="false" onAction="#guardar" prefHeight="55.0" prefWidth="105.0" styleClass="button1" text="Agregar" textFill="WHITE" />
    </children>
 </AnchorPane>

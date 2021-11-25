@@ -99,6 +99,20 @@ public class LoginController implements Initializable{
         return listaProfesor = FXCollections.observableList(lista);
     }
     
+    public Integer getUsuario(){
+        int id = 0;
+        try{
+            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_ListarUsuario}");
+            ResultSet resultado = procedimiento.executeQuery();
+            while(resultado.next()){
+               id = resultado.getInt("idUsuarioActual");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return id;
+    }
+    
     public void actualizarUsuario(int codigo){
         try{
             PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_EditarUsuario(?)}");

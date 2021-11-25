@@ -60,6 +60,7 @@ Create table curso(
     descripcion varchar(100), 
     dificultad varchar(50) not null,
     duracion int(20) not null, 
+    especial tinyint,
     Primary Key PK_idCurso(idCurso)
 );
 
@@ -92,6 +93,17 @@ Create procedure sp_EditarUsuario(IN idUsuario int)
 			Where idUsuario = 1; 
 	End$$
 Delimiter ; 
+
+
+Delimiter $$
+Create procedure sp_ListarUsuario()
+Begin
+	Select 
+		Usuario.idUsuario, 
+		Usuario.idUsuarioActual
+        from Usuario; 
+End$$
+Delimiter ;
 
 
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
@@ -157,10 +169,10 @@ Delimiter ;
 
 -- -----------------PROCEDIMIENTO DE CURSOS
 Delimiter $$
-Create procedure sp_AgregarCurso(idProfesorCurso int, nombreCurso varchar(50), descripcionCurso varchar(100), dificultadCurso varchar(50), duracionCurso int)
+Create procedure sp_AgregarCurso(idProfesorCurso int, nombreCurso varchar(50), descripcionCurso varchar(100), dificultadCurso varchar(50), duracionCurso int, especialCurso tinyint)
 Begin 	
-    Insert into curso(idProfesor, nombre, descripcion, dificultad, duracion)
-		values(idProfesorCurso, nombre, descripcionCurso, dificultadCurso, duracionCurso);
+    Insert into curso(idProfesor, nombre, descripcion, dificultad, duracion, especial)
+		values(idProfesorCurso, nombre, descripcionCurso, dificultadCurso, duracionCurso, especialCurso);
 End$$
 Delimiter ; 
 
@@ -173,14 +185,15 @@ Begin
         Curso.nombre,
         Curso.descripcion,
         Curso.dificultad,
-		Curso.duracion
+		Curso.duracion,
+        Curso.especial
         from Curso; 
 End$$
 Delimiter ;
 
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7);
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0);
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 call sp_ListarCurso;
