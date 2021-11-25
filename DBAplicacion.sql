@@ -49,6 +49,7 @@ alter table videos add foreign key (idProfesor) references Profesor(idProfesor);
 Create table curso(
 	idCurso int not null auto_increment,
     idProfesor int not null,
+    nombre varchar(50) not null,
     descripcion varchar(100), 
     dificultad varchar(50) not null,
     duracion int(20) not null, 
@@ -69,12 +70,11 @@ alter table actividades add foreign key (idCurso) references curso(idCurso);
 
 Create table Estudiante_Curso(
 	codigoEstudianteCurso int not null auto_increment, 
-    codigoEstudiante int not null, 
-    codigoCurso int not null, 
+    idEstudiante int not null, 
+    idCurso int not null, 
     Primary Key PK_codigoEstudianteCurso(codigoEstudianteCurso),
-    CONSTRAINT FK_Estudiante_Curso_Estudiantes Foreign Key (codigoEstudiante) REFERENCES Estudiante(codigoEstudiante), 
-    CONSTRAINT FK_Estudiante_Curso_Curso Foreign Key (codigoCurso) REFERENCES curso(codigoCurso)
-    
+    CONSTRAINT FK_Estudiante_Curso_Estudiantes Foreign Key (idEstudiante) REFERENCES Estudiante(idEstudiante), 
+    CONSTRAINT FK_Estudiante_Curso_Curso Foreign Key (idCurso) REFERENCES curso(idCurso)
 );
 
 
@@ -141,18 +141,32 @@ Delimiter ;
 
 -- -----------------PROCEDIMIENTO DE CURSOS
 Delimiter $$
-Create procedure sp_AgregarCurso(idProfesorCurso int, descripcionCurso varchar(100), dificultadCurso varchar(50), duracionCurso int)
+Create procedure sp_AgregarCurso(idProfesorCurso int, nombreCurso varchar(50), descripcionCurso varchar(100), dificultadCurso varchar(50), duracionCurso int)
 Begin 	
-    Insert into curso(idProfesor, descripcion, dificultad, duracion)
-		values(idProfesorCurso, descripcionCurso, dificultadCurso, duracionCurso);
+    Insert into curso(idProfesor, nombre, descripcion, dificultad, duracion)
+		values(idProfesorCurso, nombre, descripcionCurso, dificultadCurso, duracionCurso);
 End$$
 Delimiter ; 
 
+Delimiter $$
+Create procedure sp_ListarCurso()
+Begin
+	Select 
+		Curso.idCurso, 
+		Curso.idProfesor,
+        Curso.nombre,
+        Curso.descripcion,
+        Curso.dificultad,
+		Curso.duracion
+        from Curso; 
+End$$
+Delimiter ;
+
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7);
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
+call sp_ListarCurso;
 
-select *from Estudiante;
-select *from Profesor;
 
