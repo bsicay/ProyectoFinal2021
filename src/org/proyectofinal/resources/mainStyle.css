@@ -20,6 +20,20 @@
     -fx-font-weight: bold;    
 }
 
+#paneProfesor:hover{
+    -fx-background-color : #d6284b;
+
+}
+
+#imgVolver:hover{
+    -fx-effect:dropshadow(three-pass-box,white,10,0.0,2,2);  
+}
+
+#paneEstudiante:hover{
+    -fx-background-color : #d6284b;
+
+}
+
 .button1
 {
     -fx-font-family: 'M PLUS Rounded 1c', sans-serif;
