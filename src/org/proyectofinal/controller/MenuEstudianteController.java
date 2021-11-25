@@ -60,6 +60,10 @@ public class MenuEstudianteController implements Initializable{
     public void perfilZoom(){
         miPerfil.setImage(new Image("/org/proyectofinal/images/menuPrincipal/perfilZoom.png"));
     }
+    
+    public void logout(){
+        escenarioPrincipal.login();
+    }
 
     public Principal getEscenarioPrincipal() {
         return escenarioPrincipal;

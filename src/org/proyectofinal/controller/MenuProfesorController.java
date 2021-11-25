@@ -76,6 +76,10 @@ public class MenuProfesorController implements Initializable{
 
     return escenarioPrincipal;
     }
+    
+    public void logout(){
+        escenarioPrincipal.login();
+    }
 
     public void setEscenarioPrincipal(Principal escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
