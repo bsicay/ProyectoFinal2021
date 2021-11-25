@@ -45,6 +45,7 @@ Create table videos(
 );
 alter table videos add foreign key (idProfesor) references Profesor(idProfesor);
 
+
 Create table curso(
 	idCurso int not null auto_increment,
     idProfesor int not null,
@@ -55,6 +56,16 @@ Create table curso(
     Primary Key PK_idCurso(idCurso)
 );
 alter table curso add foreign key (idProfesor) references Profesor(idProfesor);
+
+Create table actividades(
+	idActividad int not null auto_increment,
+    idCurso int not null,
+    nombre varchar(40) not null,
+    descripcion varchar(100) not null,
+    archivo varchar(100) not null, 
+    Primary Key PK_idActividad(idActividad)
+);
+alter table actividades add foreign key (idCurso) references curso(idCurso);
 
 Create table Estudiante_Curso(
 	codigoEstudianteCurso int not null auto_increment, 

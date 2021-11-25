@@ -95,6 +95,7 @@ public class LoginController implements Initializable{
         }catch(Exception e){
             e.printStackTrace();
         }
+        
         return listaProfesor = FXCollections.observableList(lista);
     }
     
@@ -120,6 +121,7 @@ public class LoginController implements Initializable{
         encontradp = false;
         for(int i=0; i < getEstudiantes().size(); i++){
             if(txtUser.getText().equals(getEstudiantes().get(i).getUsuario()) && pswPassword.getText().equals(getEstudiantes().get(i).getContrasena())){
+                System.out.println(getEstudiantes().get(i).getCodigoUsuario());
                 encontradp  = true;
                 break;
             }
