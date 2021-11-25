@@ -16,6 +16,7 @@ create table Estudiante(
     cantidad_cursos int default 0, 
     discapacidad_visual tinyint,
     codigoTipoUsuario int not null, 
+    idUsuarioActual int,
     Primary Key PK_idEstudiante(idEstudiante)
 );
 
@@ -31,6 +32,7 @@ Create table Profesor(
     cantidad_cursos int default 0, 
     ensenanza_especializada tinyint,
     codigoTipoUsuario int not null, 
+    idUsuarioActual int,
     Primary Key PK_idProfesor(idProfesor)
 );
 
