@@ -139,6 +139,15 @@ Begin
 End$$
 Delimiter ;
 
+-- -----------------PROCEDIMIENTO DE CURSOS
+Delimiter $$
+Create procedure sp_AgregarCurso(idProfesorCurso int, descripcionCurso varchar(100), dificultadCurso varchar(50), duracionCurso int)
+Begin 	
+    Insert into curso(idProfesor, descripcion, dificultad, duracion)
+		values(idProfesorCurso, descripcionCurso, dificultadCurso, duracionCurso);
+End$$
+Delimiter ; 
+
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_ListarEstudiante;
