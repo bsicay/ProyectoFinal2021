@@ -49,7 +49,6 @@ Create table curso(
 	idCurso int not null auto_increment,
     idProfesor int not null,
     descripcion varchar(100), 
-    usuario varchar(50) not null,
     dificultad varchar(50) not null,
     duracion int(20) not null, 
     categoria varchar(100) not null,
