@@ -26,7 +26,7 @@
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="curso" fitHeight="150.0" fitWidth="200.0" layoutX="131.0" layoutY="74.0" onMouseEntered="#zoom" onMouseExited="#normal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="curso" fitHeight="150.0" fitWidth="200.0" layoutX="131.0" layoutY="74.0" onMouseClicked="#vistaCurso" onMouseEntered="#zoom" onMouseExited="#normal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuPrincipal/cursos.png" />
          </image>
