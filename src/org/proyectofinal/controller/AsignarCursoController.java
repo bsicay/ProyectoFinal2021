@@ -12,8 +12,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,7 +21,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
-import javax.swing.JOptionPane;
 import org.proyectofinal.bean.Curso;
 import org.proyectofinal.bean.MyListener;
 import org.proyectofinal.db.Conexion;
@@ -33,7 +30,7 @@ import org.proyectofinal.sistema.Principal;
  *
  * @author brand
  */
-public class CursosControler implements Initializable{
+public class AsignarCursoController implements Initializable{
     private Principal escenarioPrincipal;
     
     @FXML
@@ -51,7 +48,6 @@ public class CursosControler implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-  
         cursos.addAll(getCursos());
         if (cursos.size() > 0) {
             myListener = new MyListener() {
@@ -67,9 +63,8 @@ public class CursosControler implements Initializable{
         try {
             for (int i = 0; i < cursos.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/org/proyectofinal/view/cursoItem.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/org/proyectofinal/view/cursoItemAsignacion.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
-
                 CursoItemController cursoItemController = fxmlLoader.getController();
                 cursoItemController.setData(cursos.get(i), myListener);
 
@@ -100,7 +95,7 @@ public class CursosControler implements Initializable{
         Curso registro = new Curso();
         ArrayList<Curso> lista = new ArrayList<Curso>();
         try{
-            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_ListarCurso}");
+            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_ListarCursoTotales}");
             ResultSet resultado = procedimiento.executeQuery();
             while(resultado.next()){
                 lista.add(new Curso(resultado.getInt("idCurso"),
@@ -119,7 +114,7 @@ public class CursosControler implements Initializable{
     }
     
     public void menu(){
-        escenarioPrincipal.menuProfesor();
+        escenarioPrincipal.menuEstudiante();
     }
     
     
@@ -133,7 +128,8 @@ public class CursosControler implements Initializable{
     }
 
     public void setLblTitulo() {
-        lblTitulo.setText("SELECCIONE UN CURSO");
+        lblTitulo.setText("LISTADO DE CURSOS");
     }
+    
     
 }

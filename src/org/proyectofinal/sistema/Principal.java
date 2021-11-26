@@ -16,7 +16,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.proyectofinal.controller.AgregarCursosController;
 import org.proyectofinal.controller.AgregarLibrosController;
+import org.proyectofinal.controller.AsignarCursoController;
+import org.proyectofinal.controller.BrailleController;
 import org.proyectofinal.controller.CursosControler;
+import org.proyectofinal.controller.CursosEstudianteController;
 import org.proyectofinal.controller.MenuEstudianteController;
 import org.proyectofinal.controller.MenuProfesorController;
 import org.proyectofinal.controller.RegistrarController;
@@ -142,6 +145,34 @@ public class Principal extends Application {
             e.printStackTrace();
         }
     }
+    
+    public void asignarse(){
+        try{
+            AsignarCursoController cursos = (AsignarCursoController)cambiarEscena("cursosEstudianteView.fxml", 800, 550);
+            cursos.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void previoVideos(){
+        try{
+            CursosEstudianteController cursos = (CursosEstudianteController)cambiarEscena("cursosCompletosView.fxml", 800, 550);
+            cursos.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void braile(){
+        try{
+            BrailleController braile = (BrailleController)cambiarEscena("Braille2.fxml", 550, 650);
+            braile.setEscenarioPrincipal(this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
     
     

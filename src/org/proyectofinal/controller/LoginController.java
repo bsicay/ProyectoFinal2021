@@ -113,6 +113,20 @@ public class LoginController implements Initializable{
         return id;
     }
     
+    public Integer getCurso(){
+        int id = 0;
+        try{
+            PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_ListarCurso}");
+            ResultSet resultado = procedimiento.executeQuery();
+            while(resultado.next()){
+               id = resultado.getInt("idCurso");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return id;
+    }
+    
     public void actualizarUsuario(int codigo){
         try{
             PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_EditarUsuario(?)}");

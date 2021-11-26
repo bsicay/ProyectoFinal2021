@@ -1,4 +1,4 @@
-package otro;
+package org.proyectofinal.controller;
 
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
@@ -24,8 +25,10 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import org.proyectofinal.sistema.Principal;
 
 public class BrailleController implements Initializable{
+    private Principal escenarioPrincipal;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -34,27 +37,29 @@ public class BrailleController implements Initializable{
 	
 	 @FXML private Button Bseleccionar;
 	 @FXML private AnchorPane anchor;
-	 @FXML private Pagination pagination;
+	 @FXML private Pagination paginator;
 	 File filesJPG[];
-	 
+         ArrayList<String> images = new ArrayList<>();
+        
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub	
+		// TODO Auto-generated method stub
+
+                images.add("/org/proyectofinal/images/ImagenesBraille/a.jpg");
+                images.add("/org/proyectofinal/images/ImagenesBraille/e.jpg");
+                images.add("/org/proyectofinal/images/ImagenesBraille/i.png");
+                images.add("/org/proyectofinal/images/ImagenesBraille/o.jpg");
+                images.add("/org/proyectofinal/images/ImagenesBraille/u.jpg");
+                images.add("/org/proyectofinal/images/ImagenesBraille/vproximamente.jpg");
+
+                paginator.setPageFactory(n -> new ImageView(images.get(n)));
+
 	}
 
 	
 	@FXML
 	private void ButtonAction(ActionEvent event) {
-		Stage stage= (Stage) anchor.getScene().getWindow();
-		openDirectoryChooser(stage);
-		
-		pagination.setPageFactory(new Callback<Integer, Node> ()
-			{public Node call(Integer pageIndex) {
-				return createPage(pageIndex);
-			}
-			
-			}
-		);
+		paginator.setPageFactory(n -> new ImageView(images.get(n)));
 	}
 	
 	private void openDirectoryChooser(Stage parent) {
@@ -102,4 +107,17 @@ public class BrailleController implements Initializable{
 		
 		return pageBox;
 	}
+
+        public void login(){
+            escenarioPrincipal.menuEstudiante();
+        }
+    public Principal getEscenarioPrincipal() {
+        return escenarioPrincipal;
+    }
+
+    public void setEscenarioPrincipal(Principal escenarioPrincipal) {
+        this.escenarioPrincipal = escenarioPrincipal;
+    }
+        
+        
 }

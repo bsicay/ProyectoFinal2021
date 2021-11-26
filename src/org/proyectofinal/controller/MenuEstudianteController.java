@@ -64,6 +64,18 @@ public class MenuEstudianteController implements Initializable{
     public void logout(){
         escenarioPrincipal.login();
     }
+    
+    public void asignarse(){
+        escenarioPrincipal.asignarse();
+    }
+    
+    public void misCursos(){
+        escenarioPrincipal.previoVideos();
+    }
+    
+    public void braile(){
+        escenarioPrincipal.braile();
+    }
 
     public Principal getEscenarioPrincipal() {
         return escenarioPrincipal;
@@ -72,7 +84,5 @@ public class MenuEstudianteController implements Initializable{
     public void setEscenarioPrincipal(Principal escenarioPrincipal) {
         this.escenarioPrincipal = escenarioPrincipal;
     }
-    
-    
     
 }

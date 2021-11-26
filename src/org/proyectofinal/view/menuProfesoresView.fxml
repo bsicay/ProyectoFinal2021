@@ -11,46 +11,36 @@
    <children>
       <Ellipse fill="#c42143" layoutX="37.0" layoutY="74.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
       <Ellipse fill="#c42143" layoutX="141.0" layoutY="-47.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
-      <Label layoutX="135.0" layoutY="248.0" text="Crear Curso" textFill="WHITE">
+      <Label layoutX="145.0" layoutY="335.0" text="Crear Curso" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="351.0" layoutY="248.0" text="Subir Video" textFill="WHITE">
+      <Label layoutX="361.0" layoutY="335.0" text="Subir Video" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="560.0" layoutY="248.0" text="Mis cursos" textFill="WHITE">
+      <Label layoutX="560.0" layoutY="335.0" text="Mis cursos" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="curso" fitHeight="150.0" fitWidth="200.0" layoutX="131.0" layoutY="74.0" onMouseClicked="#vistaCurso" onMouseEntered="#zoom" onMouseExited="#normal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="curso" fitHeight="150.0" fitWidth="200.0" layoutX="141.0" layoutY="161.0" onMouseClicked="#vistaCurso" onMouseEntered="#zoom" onMouseExited="#normal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuPrincipal/cursos.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="video" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="74.0" onMouseEntered="#videoZoom" onMouseExited="#videoNormal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="video" fitHeight="150.0" fitWidth="200.0" layoutX="354.0" layoutY="161.0" onMouseClicked="#video" onMouseEntered="#videoZoom" onMouseExited="#videoNormal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuPrincipal/video.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="misCursos" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="74.0" onMouseClicked="#misCursos" onMouseEntered="#misCursosZoom" onMouseExited="#misCursosNormal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="misCursos" fitHeight="150.0" fitWidth="200.0" layoutX="551.0" layoutY="161.0" onMouseClicked="#misCursos" onMouseEntered="#misCursosZoom" onMouseExited="#misCursosNormal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuPrincipal/misCursos.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="miPerfil" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="308.0" onMouseEntered="#perfilZoom" onMouseExited="#perfilNormal" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/menuPrincipal/perfil.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="386.0" layoutY="477.0" text="Perfil" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
-         </font>
-      </Label>
       <Ellipse fill="#c42143" layoutX="775.0" layoutY="477.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
       <Ellipse fill="#c42143" layoutX="671.0" layoutY="550.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
       <ImageView fitHeight="80.0" fitWidth="71.0" layoutX="37.0" layoutY="442.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">

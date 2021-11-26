@@ -40,19 +40,6 @@ Create table Usuario(
     primary key PK_idUsuario(idUsuario)
 );
 
-
-Create table videos(
-	idVideo int not null auto_increment,
-    idProfesor int not null,
-    url varchar(100) not null, 
-    usuario varchar(50) not null,
-    titulo varchar(50) not null,
-    descripcion varchar(20), 
-    Primary Key PK_idVideo(idVideo)
-);
-alter table videos add foreign key (idProfesor) references Profesor(idProfesor);
-
-
 Create table curso(
 	idCurso int not null auto_increment,
     idProfesor int not null,
@@ -64,6 +51,18 @@ Create table curso(
     imageCurso longtext,
     Primary Key PK_idCurso(idCurso)
 );
+
+Create table videos(
+	idVideo int not null auto_increment,
+    idProfesor int not null,
+    idCurso int not null,
+    url longtext not null, 
+    titulo varchar(50) not null,
+    descripcion longtext, 
+    Primary Key PK_idVideo(idVideo)
+);
+alter table videos add foreign key (idProfesor) references Profesor(idProfesor);
+alter table videos add foreign key (idCurso) references Curso(idCurso);
 
 alter table curso add foreign key (idProfesor) references Profesor(idProfesor);
 
@@ -86,6 +85,11 @@ Create table Estudiante_Curso(
     CONSTRAINT FK_Estudiante_Curso_Curso Foreign Key (idCurso) REFERENCES curso(idCurso)
 );
 
+Create table videos_estudiante(
+	idVideosEstudiante int not null default 1, 
+    url longtext,
+    Primary Key PK_idVideosEstudiante(idVideosEstudiante)
+);
 
 Delimiter $$
 Create procedure sp_EditarUsuario(IN idUsuario int)
@@ -104,6 +108,77 @@ Begin
         from Usuario; 
 End$$
 Delimiter ;
+
+Delimiter $$
+Create procedure sp_EditarVideoEstudiante(IN urlVideo longtext)
+    Begin
+		Update videos_estudiante set url = urlVideo
+			Where videos_estudiante.idVideosEstudiante = 1; 
+	End$$
+Delimiter ; 
+
+Delimiter $$
+Create procedure sp_ListarUrl()
+Begin
+	Select 
+		videos_estudiante.idVideosEstudiante, 
+		videos_estudiante.url
+        from videos_estudiante; 
+End$$
+Delimiter ;
+
+
+Delimiter $$
+Create procedure sp_AgregarVideo(codigoProfesor int, nombreVideo varchar(50), descripcionVideo longtext, urlVideo longtext, codigoCurso int)
+Begin 	
+    Insert into videos(idProfesor, url, titulo, descripcion, idCurso)
+		values(codigoProfesor, urlVideo, nombreVideo, descripcionVideo, codigoCurso);
+End$$
+Delimiter; 
+
+Delimiter $$
+Create procedure sp_ListarVideo()
+Begin
+	Select 
+		Videos.idVideo, 
+		Videos.idProfesor,
+        Videos.titulo,
+        Videos.url,
+		Videos.descripcion,
+        Videos.idCurso
+        from Videos; 
+End$$
+Delimiter;
+
+
+Delimiter $$
+Create procedure sp_AgregarEstudianteCurso(codigoEstudiante int, codigoCurso int)
+Begin 	
+    Insert into Estudiante_Curso(idEstudiante, idCurso)
+		values(codigoEstudiante, codigoCurso);
+End$$
+Delimiter; 
+
+Delimiter $$
+Create procedure sp_ListarEstudianteCurso(in codigoEstudiante int) 
+Begin
+	Select 
+		Curso.nombre, 
+		Curso.descripcion,
+        Curso.dificultad,
+        Videos.url,
+        Profesor.nombre as nombreProfesor
+        
+        from Curso INNER JOIN profesor INNER JOIN Estudiante_Curso INNER JOIN videos ON curso.idCurso = Estudiante_Curso.idCurso and Curso.idProfesor = profesor.idProfesor
+        and Estudiante_Curso.idEstudiante = codigoEstudiante and videos.idCurso = Estudiante_Curso.idCurso; 
+End$$
+Delimiter;
+
+
+call sp_ListarEstudianteCurso(1);
+
+select *from Estudiante_Curso;
+select *from videos;
 
 
 -- -----------------PROCEDIMIENTO DE ESTUDIANTE
@@ -136,6 +211,8 @@ Begin
         from Estudiante; 
 End$$
 Delimiter;
+
+
 
 -- -----------------PROCEDIMIENTO DE PROFESOR
 Delimiter $$
@@ -193,6 +270,22 @@ Begin
 End$$
 Delimiter ;
 
+Delimiter $$
+Create procedure sp_ListarCursoTotales()
+Begin
+	Select 
+		Curso.idCurso, 
+		Curso.idProfesor,
+        Curso.nombre,
+        Curso.descripcion,
+        Curso.dificultad,
+		Curso.duracion,
+        Curso.especial,
+        Curso.imageCurso
+        from Curso; 
+End$$
+Delimiter ;
+
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_AgregarProfesor("Juan", "juan", "admin" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
@@ -201,13 +294,16 @@ call sp_AgregarCurso(1, "Fisica", "Curso de matematicas basicas", "Principiante"
 call sp_AgregarCurso(1, "Literatura", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/2534/2534076.png");
 call sp_AgregarCurso(1, "Programacion", "Curso de matematicas basicas", "Principiante", 7, 0, "https://avatars.githubusercontent.com/u/51731966?v=4");
 call sp_AgregarCurso(1, "Calculo", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/1902/1902648.png");
-call sp_AgregarCurso(2, "Ciencias", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons.flaticon.com/png/512/2022/premium/2022299.png?token=exp=1637907880~hmac=97f9869c15a79e392dfb607a71436208");
+call sp_AgregarCurso(2, "Ciencias", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn0.iconfinder.com/data/icons/ecology-63/64/lab-biology-science-research-chemistry-512.png");
 call sp_AgregarCurso(2, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/2231/2231431.png");
 call sp_AgregarCurso(2, "Fisica", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/887/887862.png");
-call sp_AgregarCurso(2, "Musica", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons.flaticon.com/png/512/1895/premium/1895657.png?token=exp=1637907948~hmac=f8f425b10728d31f75128186d4a71555");
+call sp_AgregarCurso(2, "Musica", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn0.iconfinder.com/data/icons/audio-icons-rounded/110/Cloud-Music-Download-512.png");
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 call sp_ListarCurso;
+call sp_ListarVideo;
+call sp_ListarCursoTotales;
 
 insert into usuario(idUsuario, idUsuarioActual) values(1, 0);
+insert into videos_estudiante(idVideosEstudiante, url) values(1, null);
 select *from usuario;

@@ -9,7 +9,7 @@ package org.proyectofinal.bean;
  *
  * @author brand
  */
-public class Curso {
+public class Curso extends Video{
     
     private int codigoCurso;
     private int codigoProfesor;
@@ -43,8 +43,13 @@ public class Curso {
         this.especial = especial;
         this.imgSrc = imgSrc;
     }
-    
-    
+
+    public Curso(String nombre, String descripcion, String dificultad, String url) {
+        super(url);
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.dificultad = dificultad;
+    }
 
     public int getCodigoCurso() {
         return codigoCurso;
@@ -106,4 +111,10 @@ public class Curso {
     public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
     }
+
+    public void setCodigoCurso(int codigoCurso) {
+        this.codigoCurso = codigoCurso;
+    }
+    
+    
 }

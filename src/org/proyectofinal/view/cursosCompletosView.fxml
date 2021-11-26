@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" styleClass="Anchor-Pane" stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.CursosEstudianteController">
+   <children>
+      <Ellipse fill="#c42143" layoutX="37.0" layoutY="74.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Ellipse fill="#c42143" layoutX="141.0" layoutY="-47.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Ellipse fill="#c42143" layoutX="775.0" layoutY="477.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <Ellipse fill="#c42143" layoutX="671.0" layoutY="550.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
+      <TableView fx:id="tblCursos" layoutX="53.0" layoutY="150.0" onKeyReleased="#seleccionarElementos" onMouseClicked="#seleccionarElementos" prefHeight="236.0" prefWidth="695.0">
+        <columns>
+          <TableColumn fx:id="colNombre" prefWidth="162.0" text="Nombre" />
+          <TableColumn fx:id="colDescripcion" minWidth="0.0" prefWidth="273.0" text="Descripcion" />
+            <TableColumn fx:id="colDificultad" prefWidth="121.0" text="Dificultad" />
+            <TableColumn fx:id="colProfesor" prefWidth="138.0" text="URL" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnVideo" layoutX="328.0" layoutY="452.0" mnemonicParsing="false" onAction="#verVideo" prefHeight="51.0" prefWidth="169.0" styleClass="button1" text="Ver Video" textFill="#d9d9d9" />
+      <Label fx:id="lblTitulo" layoutX="259.0" layoutY="49.0" text="Listado de cursos" textFill="WHITE" />
+      <ImageView fx:id="imgVolver" fitHeight="49.0" fitWidth="67.0" layoutX="27.0" layoutY="21.0" onMouseClicked="#menu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/previous.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -63,7 +63,7 @@
             <Image url="@../images/professor.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="67.0" layoutX="31.0" layoutY="24.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgVolver" fitHeight="49.0" fitWidth="67.0" layoutX="31.0" layoutY="24.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/previous.png" />
          </image>

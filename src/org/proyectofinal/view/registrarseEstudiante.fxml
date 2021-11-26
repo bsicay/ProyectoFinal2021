@@ -58,7 +58,7 @@
          </font>
       </Label>
       <Line endX="585.0" layoutX="201.0" layoutY="98.0" startX="-169.0" stroke="#c42143" />
-      <ImageView fitHeight="49.0" fitWidth="67.0" layoutX="32.0" layoutY="31.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgVolver" fitHeight="49.0" fitWidth="67.0" layoutX="32.0" layoutY="31.0" onMouseClicked="#registrar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/previous.png" />
          </image>
