@@ -24,6 +24,7 @@ public class MenuProfesorController implements Initializable{
     @FXML private ImageView libros;
     @FXML private ImageView misCursos;
     @FXML private ImageView miPerfil;
+    @FXML private ImageView video;
 	
 
     @Override
@@ -66,6 +67,14 @@ public class MenuProfesorController implements Initializable{
     
     public void perfilZoom(){
         miPerfil.setImage(new Image("/org/proyectofinal/images/menuPrincipal/perfilZoom.png"));
+    }
+    
+    public void videoNormal(){
+        video.setImage(new Image("/org/proyectofinal/images/menuPrincipal/video.png"));
+    }
+    
+    public void videoZoom(){
+        video.setImage(new Image("/org/proyectofinal/images/menuPrincipal/videoZoom.png"));
     }
     
     public void video(){

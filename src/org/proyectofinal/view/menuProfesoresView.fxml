@@ -16,7 +16,7 @@
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="358.0" layoutY="248.0" text="Subir libro" textFill="WHITE">
+      <Label layoutX="351.0" layoutY="248.0" text="Subir Video" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
@@ -31,9 +31,9 @@
             <Image url="@../images/menuPrincipal/cursos.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="libros" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="74.0" onMouseEntered="#librosZoom" onMouseExited="#librosNormal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="video" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="74.0" onMouseEntered="#videoZoom" onMouseExited="#videoNormal" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/menuPrincipal/libros.png" />
+            <Image url="@../images/menuPrincipal/video.png" />
          </image>
       </ImageView>
       <ImageView fx:id="misCursos" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="74.0" onMouseClicked="#misCursos" onMouseEntered="#misCursosZoom" onMouseExited="#misCursosNormal" pickOnBounds="true" preserveRatio="true">
