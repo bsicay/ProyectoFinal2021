@@ -95,8 +95,6 @@ Create procedure sp_EditarUsuario(IN idUsuario int)
 	End$$
 Delimiter ; 
 
-drop procedure sp_EditarUsuario;
-
 Delimiter $$
 Create procedure sp_ListarUsuario()
 Begin
@@ -198,7 +196,7 @@ Delimiter ;
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_AgregarProfesor("Juan", "juan", "admin" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/2231/2231431.png");
 call sp_AgregarCurso(2, "Fisica", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
 call sp_ListarEstudiante;
 call sp_ListarProfesor;

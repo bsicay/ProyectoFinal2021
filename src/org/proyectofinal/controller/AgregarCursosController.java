@@ -67,13 +67,15 @@ public class AgregarCursosController implements Initializable{
             registro.setDuracion(Integer.parseInt(txtDuracion.getText()));
             registro.setEspecial(chkCursoEspecial.isSelected());
             try{
-                PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_AgregarCurso(?,?,?,?,?,?)}");
+                PreparedStatement procedimiento = Conexion.getInstancia().getConexion().prepareCall("{call sp_AgregarCurso(?,?,?,?,?,?,?)}");
                 procedimiento.setInt(1, registro.getCodigoProfesor());
                 procedimiento.setString(2, registro.getNombre());
                 procedimiento.setString(3, registro.getDescripcion());
                 procedimiento.setString(4, registro.getDificultad());
                 procedimiento.setInt(5, registro.getDuracion());
                 procedimiento.setBoolean(6, registro.isEspecial());
+                String image = JOptionPane.showInputDialog("Ingrese el enlace o ruta de la imagen del curso");
+                procedimiento.setString(7, image);
                 procedimiento.execute();
                 JOptionPane.showMessageDialog(null, "CURSO GUARDADO CON EXITO");
                 limpiarControles();

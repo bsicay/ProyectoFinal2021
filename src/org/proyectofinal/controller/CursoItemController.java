@@ -28,7 +28,7 @@ public class CursoItemController {
     public void setData(Curso curso) {
         this.curso = curso;
         nameLabel.setText(curso.getNombre());
-        Image image = new Image(getClass().getResourceAsStream(curso.getImgSrc()));
+        Image image = new Image((curso.getImgSrc()));
         img.setImage(image);
         
     }
