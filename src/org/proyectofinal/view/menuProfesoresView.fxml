@@ -16,7 +16,7 @@
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="358.0" layoutY="248.0" text="Mis videos" textFill="WHITE">
+      <Label layoutX="358.0" layoutY="248.0" text="Subir libro" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />
          </font>

@@ -21,8 +21,7 @@ public class AgregarLibrosController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
             // TODO Auto-generated method stub
 
-    }
-        
+    }  
         
     public void login(){
          escenarioPrincipal.login();

@@ -18,6 +18,7 @@ public class Curso {
     private String dificultad;
     private int duracion;
     private boolean especial;
+    private String imgSrc;
 
     public Curso() {
     }
@@ -85,4 +86,11 @@ public class Curso {
         this.especial = especial;
     }
     
+    public String getImgSrc() {
+        return imgSrc;
+    }
+
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
+    }
 }
