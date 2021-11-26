@@ -90,11 +90,12 @@ Create table Estudiante_Curso(
 Delimiter $$
 Create procedure sp_EditarUsuario(IN idUsuario int)
     Begin
-		Update Usuario set idUsuarioActual = idUsuario
-			Where idUsuario = 1; 
+		Update usuario set idUsuarioActual = idUsuario
+			Where usuario.idUsuario = 1; 
 	End$$
 Delimiter ; 
 
+drop procedure sp_EditarUsuario;
 
 Delimiter $$
 Create procedure sp_ListarUsuario()
@@ -190,23 +191,18 @@ Begin
 		Curso.duracion,
         Curso.especial,
         Curso.imageCurso
-        from Curso; 
+        from Curso INNER JOIN usuario ON curso.idProfesor = usuario.idUsuarioActual; 
 End$$
 Delimiter ;
 
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
+call sp_AgregarProfesor("Juan", "juan", "admin" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(2, "Fisica", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 call sp_ListarCurso;
 
 insert into usuario(idUsuario, idUsuarioActual) values(1, 0);
 select *from usuario;
-
-
