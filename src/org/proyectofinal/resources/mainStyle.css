@@ -14,6 +14,53 @@
     
 }
 
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+ }
+
+ .scroll-pane {
+    -fx-background-color: transparent;
+ }
+
+.scroll-bar:vertical .track{
+    -fx-background-color :#1c2847;
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+ .scroll-bar .decrement-arrow{
+    -fx-shape : " ";    
+    -fx-padding :0.15em 0.0;
+}
+
+ .scroll-bar:vertical .increment-arrow,
+ .scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";    
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(black,90.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
 .transparent{
     -fx-background-color: rgba(0,0,0,0);
 }
@@ -48,6 +95,19 @@
 .button1:hover
 {
     -fx-background-color : #FA2C56 ;
+    -fx-background-radius :  30 30 30 30;
+}
+
+.buttonCursos
+{
+    -fx-font-family: 'M PLUS Rounded 1c', sans-serif;
+    -fx-background-color : #bf245c;
+    -fx-background-radius :  30 30 30 30;
+}
+
+.buttonCursos:hover
+{
+    -fx-background-color : #e0105b ;
     -fx-background-radius :  30 30 30 30;
 }
 
@@ -95,6 +155,6 @@
 }
 
 .shadow{
-    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
+    -fx-effect: dropShadow(three-pass-box,rgba(104, 100, 100, 0.329), 10.0 , 0.0 , 0.0 ,10.0);
 }
 

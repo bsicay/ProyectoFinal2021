@@ -100,6 +100,10 @@ public class CursosControler implements Initializable{
         }
         return lista;
     }  
+    
+    public void menu(){
+        escenarioPrincipal.menuProfesor();
+    }
 
     public Principal getEscenarioPrincipal() {
         return escenarioPrincipal;

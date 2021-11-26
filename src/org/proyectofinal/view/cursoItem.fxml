@@ -12,13 +12,13 @@
 
 <AnchorPane stylesheets="@../resources/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyectofinal.controller.CursoItemController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="8.0" prefHeight="215.0" prefWidth="225.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="8.0" prefHeight="215.0" prefWidth="225.0" styleClass="buttonCursos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="51.0" prefWidth="185.0">
                <children>
-                  <Label fx:id="nameLabel" prefHeight="49.0" prefWidth="206.0" text="Cherry">
+                  <Label fx:id="nameLabel" prefHeight="49.0" prefWidth="206.0" text="Cherry" textFill="WHITE">
                      <font>
-                        <Font name="Cambria" size="18.0" />
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
                      </font>
                   </Label>
                </children>
