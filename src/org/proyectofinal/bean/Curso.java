@@ -33,6 +33,19 @@ public class Curso {
         this.especial = especial;
     }
 
+    public Curso(int codigoCurso, int codigoProfesor, String nombre, String descripcion, String dificultad, int duracion, boolean especial, String imgSrc) {
+        this.codigoCurso = codigoCurso;
+        this.codigoProfesor = codigoProfesor;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.dificultad = dificultad;
+        this.duracion = duracion;
+        this.especial = especial;
+        this.imgSrc = imgSrc;
+    }
+    
+    
+
     public int getCodigoCurso() {
         return codigoCurso;
     }

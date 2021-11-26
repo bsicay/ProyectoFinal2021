@@ -21,9 +21,6 @@ public class CursoItemController {
     private Label nameLabel;
 
     @FXML
-    private Label priceLable;
-
-    @FXML
     private ImageView img;
 
     private Curso curso;
@@ -31,7 +28,6 @@ public class CursoItemController {
     public void setData(Curso curso) {
         this.curso = curso;
         nameLabel.setText(curso.getNombre());
-        priceLable.setText("Duracion: "+curso.getDuracion());
         Image image = new Image(getClass().getResourceAsStream(curso.getImgSrc()));
         img.setImage(image);
         

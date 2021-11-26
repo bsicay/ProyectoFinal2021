@@ -61,6 +61,7 @@ Create table curso(
     dificultad varchar(50) not null,
     duracion int(20) not null, 
     especial tinyint,
+    imageCurso varchar(100),
     Primary Key PK_idCurso(idCurso)
 );
 
@@ -169,10 +170,11 @@ Delimiter ;
 
 -- -----------------PROCEDIMIENTO DE CURSOS
 Delimiter $$
-Create procedure sp_AgregarCurso(idProfesorCurso int, nombreCurso varchar(50), descripcionCurso varchar(100), dificultadCurso varchar(50), duracionCurso int, especialCurso tinyint)
+Create procedure sp_AgregarCurso(idProfesorCurso int, nombreCurso varchar(50), descripcionCurso varchar(100), dificultadCurso varchar(50), 
+duracionCurso int, especialCurso tinyint, imagenCurso varchar(100))
 Begin 	
-    Insert into curso(idProfesor, nombre, descripcion, dificultad, duracion, especial)
-		values(idProfesorCurso, nombre, descripcionCurso, dificultadCurso, duracionCurso, especialCurso);
+    Insert into curso(idProfesor, nombre, descripcion, dificultad, duracion, especial, imageCurso)
+		values(idProfesorCurso, nombreCurso, descripcionCurso, dificultadCurso, duracionCurso, especialCurso, imagenCurso);
 End$$
 Delimiter ; 
 
@@ -186,14 +188,20 @@ Begin
         Curso.descripcion,
         Curso.dificultad,
 		Curso.duracion,
-        Curso.especial
+        Curso.especial,
+        Curso.imageCurso
         from Curso; 
 End$$
 Delimiter ;
 
 call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 5-40 Z9", 16, "M", 1, 0);
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
-call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0);
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 call sp_ListarCurso;

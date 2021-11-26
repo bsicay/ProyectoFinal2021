@@ -36,7 +36,7 @@
             <Image url="@../images/menuPrincipal/libros.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="misCursos" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="74.0" onMouseEntered="#misCursosZoom" onMouseExited="#misCursosNormal" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="misCursos" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="74.0" onMouseClicked="#misCursos" onMouseEntered="#misCursosZoom" onMouseExited="#misCursosNormal" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuPrincipal/misCursos.png" />
          </image>
