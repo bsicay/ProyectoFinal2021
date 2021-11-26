@@ -61,7 +61,7 @@ Create table curso(
     dificultad varchar(50) not null,
     duracion int(20) not null, 
     especial tinyint,
-    imageCurso varchar(100),
+    imageCurso longtext,
     Primary Key PK_idCurso(idCurso)
 );
 
@@ -170,7 +170,7 @@ Delimiter ;
 -- -----------------PROCEDIMIENTO DE CURSOS
 Delimiter $$
 Create procedure sp_AgregarCurso(idProfesorCurso int, nombreCurso varchar(50), descripcionCurso varchar(100), dificultadCurso varchar(50), 
-duracionCurso int, especialCurso tinyint, imagenCurso varchar(100))
+duracionCurso int, especialCurso tinyint, imagenCurso longtext)
 Begin 	
     Insert into curso(idProfesor, nombre, descripcion, dificultad, duracion, especial, imageCurso)
 		values(idProfesorCurso, nombreCurso, descripcionCurso, dificultadCurso, duracionCurso, especialCurso, imagenCurso);
@@ -197,7 +197,14 @@ call sp_AgregarEstudiante("Brandon", "bsicay", "admin", "48859611", "11 Calle D 
 call sp_AgregarProfesor("Jose", "jose", "123" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_AgregarProfesor("Juan", "juan", "admin" ,"48859611", "11 Calle D 5-40 Z9", 26, "M", 0, 1);
 call sp_AgregarCurso(1, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/2231/2231431.png");
-call sp_AgregarCurso(2, "Fisica", "Curso de matematicas basicas", "Principiante", 7, 0, "/org/proyectofinal/images/menuPrincipal/libros.png");
+call sp_AgregarCurso(1, "Fisica", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/887/887862.png");
+call sp_AgregarCurso(1, "Literatura", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/2534/2534076.png");
+call sp_AgregarCurso(1, "Programacion", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons.flaticon.com/png/512/2721/premium/2721593.png?token=exp=1637908033~hmac=c69a7ebeb20ede99c7ab2ae564a9932a");
+call sp_AgregarCurso(1, "Calculo", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons.flaticon.com/png/512/2792/premium/2792365.png?token=exp=1637907854~hmac=b195bc1a0f51fa1e26ddc06b88e0dce5");
+call sp_AgregarCurso(2, "Ciencias", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons.flaticon.com/png/512/2022/premium/2022299.png?token=exp=1637907880~hmac=97f9869c15a79e392dfb607a71436208");
+call sp_AgregarCurso(2, "Algebra", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/2231/2231431.png");
+call sp_AgregarCurso(2, "Fisica", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons-png.flaticon.com/512/887/887862.png");
+call sp_AgregarCurso(2, "Musica", "Curso de matematicas basicas", "Principiante", 7, 0, "https://cdn-icons.flaticon.com/png/512/1895/premium/1895657.png?token=exp=1637907948~hmac=f8f425b10728d31f75128186d4a71555");
 call sp_ListarEstudiante;
 call sp_ListarProfesor;
 call sp_ListarCurso;

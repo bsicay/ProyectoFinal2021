@@ -17,7 +17,7 @@
    <children>
       <Ellipse fill="#c42143" layoutX="23.0" layoutY="42.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
       <Ellipse fill="#c42143" layoutX="783.0" layoutY="509.0" radiusX="94.0" radiusY="178.0" stroke="#c42143" strokeType="INSIDE" />
-      <Label fx:id="lblTitulo" layoutX="314.0" layoutY="23.0" text="Mis cursos" textFill="WHITE" />
+      <Label fx:id="lblTitulo" layoutX="314.0" layoutY="23.0" text="MIS CURSOS" textFill="WHITE" />
       <VBox layoutY="81.0" prefHeight="473.0" prefWidth="800.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
